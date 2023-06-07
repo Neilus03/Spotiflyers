@@ -143,7 +143,7 @@ if __name__ == "__main__":
     most_similar_artist_id = artists_audio_feat.index[most_similar_artist_index]
 
     # Generate a comparison using the plot audio features function
-    plot_audio_features(artists_audio_feat, drake_id, most_similar_artist_id)
+    plot_audio_features(artists_audio_feat, drake_id='3TVXtAsR1Inumwj472S9r4', most_similar_artist_id)
     
     
     '''
@@ -155,7 +155,7 @@ if __name__ == "__main__":
     least_similar_artist_id = artists_audio_feat.index[least_similar_artist_index]
 
     # Generate a comparison using the plot audio features function
-    plot_audio_features(artists_audio_feat, drake_id, least_similar_artist_id)
+    plot_audio_features(artists_audio_feat, drake_id='3TVXtAsR1Inumwj472S9r4', least_similar_artist_id)
     
     
     '''
