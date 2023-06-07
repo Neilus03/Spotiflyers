@@ -137,6 +137,10 @@ def detect_communities(g: nx.Graph, method: str) -> tuple:
 if __name__ == "__main__":
     # ------- IMPLEMENT HERE THE MAIN FOR THIS SESSION ------- #
     
+    gB = nx.read_graphml('/content/gB.graphml')
+    hB = nx.read_graphml('/content/hB.graphml')
+    fB = nx.read_graphml('/content/fB.graphml')
+
     '''
     1) Indicate the number of nodes shared by the graphs gB and fB (seeds Drake
        and the last crawled artist from the DFS crawl, respectively); and gB and hB 
@@ -144,13 +148,24 @@ if __name__ == "__main__":
        Compare the number of common nodes with the results obtained from calling
        the create similarity graph function.
     '''
-    #CODE HERE
+    common_nodes_gB_fB = num_common_nodes(gB, fB)
+    print(f"Number of common nodes between gB and fB: {common_nodes_gB_fB}")
+
+    common_nodes_gB_hB = num_common_nodes(gB, hB)
+    print(f"Number of common nodes between gB and hB: {common_nodes_gB_hB}")
+
+
     '''
     2) Calculate the 25 most central nodes in the graph g'B using both degree centrality
        and betweenness centrality. How many nodes are there in common between the two sets?
        Explain what information this gives us about the analyzed graph.
     '''
-    #CODE HERE
+    most_central_nodes_degree = get_k_most_central(gB, 'degree', 25)
+    most_central_nodes_betweenness = get_k_most_central(gB, 'betweenness', 25)
+    common_central_nodes = set(most_central_nodes_degree).intersection(most_central_nodes_betweenness)
+    print(f"Number of common nodes between most central nodes (degree and betweenness): {len(common_central_nodes)}")
+
+
     '''
     3) Find cliques of size greater than or equal to min size clique in the
        graphs g'B and g'D. Thes value of the variable min size clique will depend on the
@@ -159,7 +174,17 @@ if __name__ == "__main__":
        each size. Calculate and indicate the total number of different nodes that are part
        of all these cliques and compare the results from the two graphs.
     '''
-    #CODE HERE
+    min_size_clique = 10 #x poner algo
+
+    cliques_gB, nodes_in_cliques_gB = find_cliques(gB, min_size_clique)
+    print(f"Number of cliques in gB with size >= {min_size_clique}: {len(cliques_gB)}")
+    print(f"Number of nodes in these cliques in gB: {len(nodes_in_cliques_gB)}")
+
+    cliques_gD, nodes_in_cliques_gD = find_cliques(gD, min_size_clique)
+    print(f"Number of cliques in gD with size >= {min_size_clique}: {len(cliques_gD)}")
+    print(f"Number of nodes in these cliques in gD: {len(nodes_in_cliques_gD)}")
+
+
     '''
     4) Find cliques of size greater than or equal to min size clique in the graphs g'B and g'D.
        The value of the variable min size clique will depend on the graph. Choose the maximum 
@@ -168,11 +193,15 @@ if __name__ == "__main__":
        number of different nodes that are part of all these cliques and compare the results from
        the two graphs.
     '''
-    #CODE HERE
+    #max_size_clique = max(cliques_gB, key=len)
+    #print(f"Max size clique: {max_size_clique}")
+
+
     '''
     5) Choose one of the cliques with the maximum size and analyze the artists that are part
        of it. Try to find some characteristic that defines these artists and explain it.
     '''
+    
     #CODE HERE
 
     # ------------------- END OF MAIN ------------------------ #
