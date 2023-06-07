@@ -176,6 +176,7 @@ if __name__ == "__main__":
     '''
     gB = crawler(search_artist('Drake'), max_nodes_to_crawl=200, strategy='BFS', out_filename='gB_graph.graphml')
 
+    '''this code is to plot the graph gB
     # Set up layout and draw the graph
     pos = nx.spring_layout(gB)
 
@@ -185,8 +186,10 @@ if __name__ == "__main__":
     labels = {k: r'{}'.format(v.replace("$", "\$")) for k, v in labels.items()}
 
     # Display the graph
-
     nx.draw(gB, pos, with_labels=True, labels=labels, node_color='lightblue', edge_color='gray')
+    '''
+    
+    # getting the order and size of gB for the report questions:
     print('gB order: {}\ngB size: {}\n'.format(gB.order(), gB.size()))
 
     '''
@@ -196,8 +199,7 @@ if __name__ == "__main__":
 
     gD = crawler(search_artist('Drake'), max_nodes_to_crawl=200, strategy='DFS', out_filename='gD_graph.graphml')
 
-    print(len(gD))
-
+    '''this code is to plot the graph gD
     # Set up layout and draw the graph
     pos = nx.spring_layout(gD)
 
@@ -207,7 +209,9 @@ if __name__ == "__main__":
     
     # Display the graph
     nx.draw(gD, pos=pos, with_labels=True, labels=labels, node_color='lightblue', edge_color='gray')
-
+    '''
+    
+    # getting the order and size of gB for the report questions:
     print('gD order: {}\ngD size: {}\n'.format(gD.order(), gD.size()))
 
     '''
