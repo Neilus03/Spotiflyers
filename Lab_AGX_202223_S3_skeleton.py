@@ -36,9 +36,20 @@ def get_degree_distribution(g: nx.Graph) -> dict:
     :return: dictionary with degree distribution (keys are degrees, values are number of occurrences).
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
-    pass
-    # ----------------- END OF FUNCTION --------------------- #
+    
+    # Calculate the degree of each node in the graph
+    degrees = [g.degree(node) for node in g]
 
+    # Initialize a dictionary to count the number of nodes for each degree
+    degree_dist = {deg: 0 for deg in set(degrees)}
+
+    # Count the number of nodes for each degree
+    for deg in degrees:
+        degree_dist[deg] +=1
+
+    # Return the degree distribution
+    return degree_dist
+    # ----------------- END OF FUNCTION --------------------- # #
 
 def get_k_most_central(g: nx.Graph, metric: str, num_nodes: int) -> list:
     """
@@ -50,7 +61,24 @@ def get_k_most_central(g: nx.Graph, metric: str, num_nodes: int) -> list:
     :return: list with the top num_nodes nodes with the specified centrality.
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
-    pass
+    
+    # Compute the centrality scores for all nodes using the appropriate metric
+    if metric == 'degree':
+        centrality_scores = nx.degree_centrality(g)
+    elif metric == 'betweenness':
+        centrality_scores = nx.betweenness_centrality(g)
+    elif metric == 'closeness':
+        centrality_scores = nx.closeness_centrality(g)
+    elif metric == 'eigenvector':
+        centrality_scores = nx.eigenvector_centrality(g)
+    else:
+        raise ValueError("Invalid centrality metric")
+
+    # Sort the nodes by their centrality scores in descending order
+    sorted_nodes = sorted(centrality_scores, key=centrality_scores.get, reverse=True)
+
+    # Return the top num_nodes nodes
+    return sorted_nodes[:num_nodes]
     # ----------------- END OF FUNCTION --------------------- #
 
 
@@ -64,8 +92,20 @@ def find_cliques(g: nx.Graph, min_size_clique: int) -> tuple:
         list of nodes in any of the cliques.
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
-    pass
+    
+    # Find all cliques in the graph using NetworkX's find_cliques function
+    all_cliques = list(nx.find_cliques(g))
+
+    # Filter out the cliques that are smaller than min_size_clique
+    large_cliques = [clique for clique in all_cliques if len(clique) >= min_size_clique]
+
+    # Get a list of all nodes that are in any of the large cliques
+    nodes_in_cliques = list(set(node for clique in large_cliques for node in clique))
+
+    return (large_cliques, nodes_in_cliques)
+
     # ----------------- END OF FUNCTION --------------------- #
+
 
 
 def detect_communities(g: nx.Graph, method: str) -> tuple:
