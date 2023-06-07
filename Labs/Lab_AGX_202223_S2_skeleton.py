@@ -80,6 +80,7 @@ def prune_low_degree_nodes(g: nx.Graph, min_degree: int, out_filename: str) -> n
     return prunned_g
     # ----------------- END OF FUNCTION --------------------- #
 
+import numpy as np
 
 def prune_low_weight_edges(g: nx.Graph, min_weight=None, min_percentile=None, out_filename: str = None) -> nx.Graph:
     """
@@ -137,12 +138,17 @@ def prune_low_weight_edges(g: nx.Graph, min_weight=None, min_percentile=None, ou
         # Remove each edge from the graph
         prunned_g.remove_edge(u,v)
 
+    #   We will store the lonely nodes in this list
+    nodes_to_prune=[]
     # Iterate over each node in the pruned graph
     for node in prunned_g:
-
-        # Remove any nodes that have degree 0 after pruning
+        
+        # Append to the Remove list any nodes that have degree 0 after pruning
         if prunned_g.degree(node) == 0:
-            prunned_g.remove_node(node)
+            nodes_to_prune.append(node)
+            
+    for node in nodes_to_prune:
+        prunned_g.remove_node(node)
     
     # Write the pruned graph to a file in the GraphML format
     nx.write_graphml(prunned_g, out_filename)
@@ -161,12 +167,23 @@ def compute_mean_audio_features(tracks_df: pd.DataFrame) -> pd.DataFrame:
     :return: artist dataframe (with mean audio features per each artist).
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
-    pass
+
+    audio_features = ['danceability', 'energy', 'loudness', 'speechiness',
+                      'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo']
+
+    # Group tracks by artist and calculate mean audio features for each artist
+    artist_means = tracks_df.groupby('artist_id')[audio_features].mean()
+
+    # Merge mean audio features with artist identification data
+    artist_audio_features_df = artist_means.merge(tracks_df[['artist_id', 'artist_name']].drop_duplicates(), left_on=None, right_on='artist_id', left_index=True, right_index=False)#, left_index=True)#, right_on='artist')
+    
+    return artist_audio_features_df
     # ----------------- END OF FUNCTION --------------------- #
 
 
-def create_similarity_graph(artist_audio_features_df: pd.DataFrame, similarity: str, out_filename: str = None) -> \
-        nx.Graph:
+from sklearn.metrics import pairwise_distances
+
+def create_similarity_graph(artist_audio_features_df: pd.DataFrame, similarity: str, out_filename: str = 'gw_.graphml') -> nx.Graph:
     """
     Create a similarity graph from a dataframe with mean audio features per artist.
 
@@ -176,7 +193,32 @@ def create_similarity_graph(artist_audio_features_df: pd.DataFrame, similarity: 
     :return: a networkx graph with the similarity between artists as edge weights.
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
-    pass
+    
+    # Compute the pairwise similarity matrix
+    similarity_matrix = pairwise_distances(artist_audio_features_df.drop(columns=['artist_id', 'artist_name']).values, metric=similarity)
+    
+    # Initialize the graph
+    G = nx.Graph()
+    
+    # Add nodes to the graph
+    for idx, artist in enumerate(artist_audio_features_df.index):
+        G.add_node(artist)
+    
+    # Add edges to the graph
+    for i in range(similarity_matrix.shape[0]):
+        for j in range(i+1, similarity_matrix.shape[1]):
+            artist_i = artist_audio_features_df.index[i]
+            artist_j = artist_audio_features_df.index[j]
+            weight = similarity_matrix[i, j]
+            
+            G.add_edge(artist_i, artist_j, weight=weight)
+    
+    # Save the graph to a file if out_filename is provided
+    if out_filename:
+        nx.write_graphml(G, out_filename)
+    
+    return G
+    
     # ----------------- END OF FUNCTION --------------------- #
 
 
