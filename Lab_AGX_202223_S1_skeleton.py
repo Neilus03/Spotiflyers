@@ -1,6 +1,5 @@
 import networkx as nx
 import pandas as pd
-import matplotlib.pyplot as plt
 
 # ------- IMPLEMENT HERE ANY AUXILIARY FUNCTIONS NEEDED ------- #
 import spotipy
@@ -195,7 +194,7 @@ if __name__ == "__main__":
        and exploring 200 artists with DFS (we will call this graph gD).
     '''
 
-    gD = crawler(search_artist('Drake'), max_nodes_to_crawl=200, strategy='DFS')
+    gD = crawler(search_artist('Drake'), max_nodes_to_crawl=200, strategy='DFS', out_filename='gD_graph.graphml')
 
     print(len(gD))
 
@@ -227,11 +226,11 @@ if __name__ == "__main__":
 
     '''
     e) A graph of related artists starting with the last crawled artist from 
-    gD and exploring 200 artists with BFS (we will call this graph fB).
+       gD and exploring 200 artists with BFS (we will call this graph fB).
     '''
 
     last_crawled_node_in_gD = list(gD.nodes())[-1]
 
-    fB = crawler(last_crawled_node_in_gD, max_nodes_to_crawl=200, strategy='BFS')
+    fB = crawler(last_crawled_node_in_gD, max_nodes_to_crawl=200, strategy='BFS', out_filename='graph_FB.graphml')
 
     # ------------------- END OF MAIN ------------------------ #

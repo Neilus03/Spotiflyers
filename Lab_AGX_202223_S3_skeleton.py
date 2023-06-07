@@ -1,5 +1,6 @@
 import networkx as nx
-
+from Lab_AGX_202223_S1_skeleton import *
+from Lab_AGX_202223_S2_skeleton import *
 # ------- IMPLEMENT HERE ANY AUXILIARY FUNCTIONS NEEDED ------- #
 
 
@@ -70,7 +71,45 @@ def detect_communities(g: nx.Graph, method: str) -> tuple:
     # ----------------- END OF FUNCTION --------------------- #
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # ------- IMPLEMENT HERE THE MAIN FOR THIS SESSION ------- #
-    pass
+    
+    '''
+    1) Indicate the number of nodes shared by the graphs gB and fB (seeds Drake
+       and the last crawled artist from the DFS crawl, respectively); and gB and hB 
+       (seeds Drake and French Montana, respectively). Use the function num_common_nodes.
+       Compare the number of common nodes with the results obtained from calling
+       the create similarity graph function.
+    '''
+    #CODE HERE
+    '''
+    2) Calculate the 25 most central nodes in the graph g'B using both degree centrality
+       and betweenness centrality. How many nodes are there in common between the two sets?
+       Explain what information this gives us about the analyzed graph.
+    '''
+    #CODE HERE
+    '''
+    3) Find cliques of size greater than or equal to min size clique in the
+       graphs g'B and g'D. Thes value of the variable min size clique will depend on the
+       graph. Choose the maximum value that generates at least 2 cliques. Indicate the
+       value you chose for min size clique and the total number of cliques you found for
+       each size. Calculate and indicate the total number of different nodes that are part
+       of all these cliques and compare the results from the two graphs.
+    '''
+    #CODE HERE
+    '''
+    4) Find cliques of size greater than or equal to min size clique in the graphs g'B and g'D.
+       The value of the variable min size clique will depend on the graph. Choose the maximum 
+       value that generates at least 2 cliques. Indicate the value you chose for min size clique
+       and the total number of cliques you found for each size. Calculate and indicate the total
+       number of different nodes that are part of all these cliques and compare the results from
+       the two graphs.
+    '''
+    #CODE HERE
+    '''
+    5) Choose one of the cliques with the maximum size and analyze the artists that are part
+       of it. Try to find some characteristic that defines these artists and explain it.
+    '''
+    #CODE HERE
+
     # ------------------- END OF MAIN ------------------------ #
