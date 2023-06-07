@@ -1,5 +1,6 @@
 import networkx as nx
 import pandas as pd
+from Lab_AGX_202223_S2_skeleton import *
 
 # ------- IMPLEMENT HERE ANY AUXILIARY FUNCTIONS NEEDED ------- #
 
