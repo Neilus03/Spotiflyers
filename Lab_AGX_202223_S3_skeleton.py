@@ -14,9 +14,19 @@ def num_common_nodes(*arg):
     :return: an integer, number of common nodes.
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
-    pass
-    # ----------------- END OF FUNCTION --------------------- #
+    
+    # Check if there is at least one graph
+    if len(arg) == 0:
+        return 0
 
+    # Collect all nodes from all graphs into a list of sets
+    nodes_sets = [set(graph.nodes()) for graph in arg]
+
+    # Find the intersection of all sets, i.e. the common nodes
+    common_nodes = set.intersection(*nodes_sets)
+
+    return len(common_nodes)
+    # ----------------- END OF FUNCTION --------------------- #
 
 def get_degree_distribution(g: nx.Graph) -> dict:
     """
