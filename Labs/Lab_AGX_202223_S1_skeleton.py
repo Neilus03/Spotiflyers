@@ -126,17 +126,22 @@ def get_track_data(graphs: list, out_filename: str) -> pd.DataFrame:
     :return: pandas dataframe with track data.
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
+    
     track_data = []
     
-    for G in graphs:
-        for node in G.nodes():
-            # Get the top tracks of the artist in Spain
-            top_tracks = sp.artist_top_tracks(node, country='ES')
+    # set to have all the different artist in order to avoid repeating artist
+    total_artists = {artist for g in graphs for artist in g if g.out_degree(artist) > 0} 
+    
+    for node in total_artists:
+        # Get the top tracks of the artist in Spain
+        top_tracks = sp.artist_top_tracks(node, country='ES')
 
-            for track in top_tracks['tracks']:
-                # Get the audio features of the track
-                audio_features = sp.audio_features(track['id'])[0]
-
+        for track in top_tracks['tracks']:
+            # Get the audio features of the track
+            audio_features = sp.audio_features(track['id'])
+            
+            if audio_features is not None and len(audio_features) > 0:
+                audio_features = audio_features[0]
                 track_data.append({
                     'track_id': track['id'],
                     'duration': track['duration_ms'],
@@ -155,7 +160,7 @@ def get_track_data(graphs: list, out_filename: str) -> pd.DataFrame:
                     'album_name': track['album']['name'],
                     'album_release_date': track['album']['release_date'],
                     'artist_id': node,
-                    'artist_name': G.nodes[node]['name']
+                    'artist_name': sp.artist(node)['name']
                 })
     
     top_tracks_df = pd.DataFrame(track_data)
