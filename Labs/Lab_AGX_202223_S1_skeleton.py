@@ -219,7 +219,7 @@ if __name__ == "__main__":
        in any of the previous graphs (we will call this dataset D).
     '''
     
-    songs_data = get_track_data([gB, gD], 'top_track.csv')
+    songs_data = get_track_data([gB, gD], 'D.csv')
 
     '''
     d) A graph of related artists starting with the artist French Montana
