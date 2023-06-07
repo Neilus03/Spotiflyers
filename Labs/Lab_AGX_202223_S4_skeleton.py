@@ -143,7 +143,7 @@ if __name__ == "__main__":
     '''
     drake_index = artists_audio_feat.index.get_loc(drake_id)
     least_similar_artist_index = np.argmin(similarity_matrix[drake_index])
-    least_similar_artist_id = artists_audio_feat.index[most_similar_artist_index]
+    least_similar_artist_id = artists_audio_feat.index[least_similar_artist_index]
 
     # Generate a comparison using the plot audio features function
     plot_audio_features(artists_audio_feat, drake_id, least_similar_artist_id)
