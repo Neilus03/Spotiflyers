@@ -16,7 +16,21 @@ def retrieve_bidirectional_edges(g: nx.DiGraph, out_filename: str) -> nx.Graph:
     :return: a networkx undirected graph.
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
-    pass
+    
+    # Create an empty undirected graph
+    new_g = nx.Graph()
+
+    # Iterate over all edges of the input graph
+    for u, v in g.edges():
+        # Check if the reverse edge exists in the input graph
+        if g.has_edge(v, u):
+            # If the reverse edge exists, add an undirected edge to the output graph
+            new_g.add_edge(u, v)
+
+    # Save the graph to a file
+    nx.write_graphml(new_g, out_filename)
+
+    return new_g
     # ----------------- END OF FUNCTION --------------------- #
 
 
@@ -30,8 +44,40 @@ def prune_low_degree_nodes(g: nx.Graph, min_degree: int, out_filename: str) -> n
     :return: a pruned networkx graph.
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
-    pass
+    
+    # Make a copy of the input graph. This is done to avoid altering the original graph.
+    prunned_g = g.copy()
+
+    # List to store the nodes to be pruned
+    nodes_to_prune = []
+
+    # Iterate over each node in the graph
+    for node in prunned_g:
+
+        # If the degree of the node is less than the specified minimum degree, add it to the list of nodes to be pruned
+        if prunned_g.degree(node) < min_degree:
+            nodes_to_prune.append(node)
+
+    # Iterate over the list of nodes to be pruned
+    for node in nodes_to_prune:
+
+        # Remove each node from the graph
+        prunned_g.remove_node(node)
+
+    # Iterate over each node in the pruned graph
+    for node in prunned_g:
+
+        # Remove any nodes that have degree 0 after pruning
+        if prunned_g.degree(node) == 0:
+            prunned_g.remove_node(node)
+    
+    # Write the pruned graph to a file in the GraphML format
+    nx.write_graphml(prunned_g, out_filename)
+
+    # Return the pruned graph
+    return prunned_g
     # ----------------- END OF FUNCTION --------------------- #
+
 
 
 def prune_low_weight_edges(g: nx.Graph, min_weight=None, min_percentile=None, out_filename: str = None) -> nx.Graph:
