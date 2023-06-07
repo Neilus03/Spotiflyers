@@ -117,7 +117,20 @@ def detect_communities(g: nx.Graph, method: str) -> tuple:
     :return: two-element tuple, list of communities (each community is a list of nodes) and modularity of the partition.
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
-    pass
+ 
+    if method == "girvan-newman":
+        communities = list(nx.community.girvan_newman(g))
+    elif method == "louvain":
+        partition = community.best_partition(g)
+        communities = [[] for _ in range(max(partition.values()) + 1)]
+        for node, community_id in partition.items():
+            communities[community_id].append(node)
+    else:
+        raise ValueError("Invalid community detection method. Supported methods: girvan-newman, louvain.")
+
+    modularity = community.modularity(partition, g) if method == "louvain" else None
+    return communities, modularity
+
     # ----------------- END OF FUNCTION --------------------- #
 
 
