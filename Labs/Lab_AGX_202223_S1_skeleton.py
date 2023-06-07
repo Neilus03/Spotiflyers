@@ -7,7 +7,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 auth_manager = SpotifyClientCredentials(client_id='04861c6a3a184ab29403dcdf74848158',client_secret='6f8b0da3c7e2496c9a421469d96a379d')
 sp = spotipy.Spotify ( auth_manager = auth_manager )
 
-
+'''
 playlists = sp.user_playlists ('spotify')
 while playlists :
     for i , playlist in enumerate ( playlists ['items']) :
@@ -16,7 +16,7 @@ while playlists :
         playlists = sp . next ( playlists )
     else :
         playlists = None
-
+'''
 # --------------- END OF AUXILIARY FUNCTIONS ------------------ #
 
 
@@ -60,7 +60,7 @@ def crawler(seed: str, max_nodes_to_crawl: int, strategy: str = "BFS", out_filen
     if strategy=="DFS":
       
       # Start loop that lasts until we meet the target of nodes to crawl or we run out of nodes
-      while (expanded_counter <= max_nodes_to_crawl) and nodes2expand:
+      while (expanded_counter < max_nodes_to_crawl) and nodes2expand:
         #print(expanded_counter)
         current_artist = nodes2expand.pop()# The id from which we are taking related artists right now
         
