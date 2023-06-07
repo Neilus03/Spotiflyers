@@ -229,7 +229,17 @@ if __name__ == "__main__":
     programmed function in exercise 1, retrieve bidirectional edges, to the
     graphs obtained by the crawler in session 1, gB and gD.
     """
-    gB2d=retrieve_bidirectional_edges(gB, "gB2d")
-    gD2d=retrieve_bidirectional_edges(gD, "gD2d")
+    
+    # First we load the graph gB and gD from previous session:
+    gB = nx.read_graphml('./gB_graph.graphml')
+    gD = nx.read_graphml('./gD_graph.graphml')
+   
+    g_B = retrieve_bidirectional_edges(gB, "g\'B.graphml")
+    g_D = retrieve_bidirectional_edges(gD, "g\'D.graphml")
+    
+    print(f"gB' order = {gB_.order()} \tgB' size = {gB_.size()}\ngD' order = {gD_.order()}\tgD' size = {gD_.size()}")
+    
+    
+    
     pass
     # ------------------- END OF MAIN ------------------------ #
