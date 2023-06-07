@@ -224,5 +224,12 @@ def create_similarity_graph(artist_audio_features_df: pd.DataFrame, similarity: 
 
 if __name__ == "__main__":
     # ------- IMPLEMENT HERE THE MAIN FOR THIS SESSION ------- #
+    """
+    a)Two undirected graphs (g′B and g′D) of artists obtained by applying the
+    programmed function in exercise 1, retrieve bidirectional edges, to the
+    graphs obtained by the crawler in session 1, gB and gD.
+    """
+    gB2d=retrieve_bidirectional_edges(gB, "gB2d")
+    gD2d=retrieve_bidirectional_edges(gD, "gD2d")
     pass
     # ------------------- END OF MAIN ------------------------ #
