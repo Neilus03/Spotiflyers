@@ -47,7 +47,6 @@ def plot_degree_distribution(degree_dict: dict, normalized: bool = False, loglog
     plt.show()
     # ----------------- END OF FUNCTION --------------------- #
 
-
 def plot_audio_features(artists_audio_feat: pd.DataFrame, artist1_id: str, artist2_id: str) -> None:
     """
     Plot a (single) figure with a plot of mean audio features of two different artists.
@@ -58,9 +57,24 @@ def plot_audio_features(artists_audio_feat: pd.DataFrame, artist1_id: str, artis
     :return: None
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
-    pass
-    # ----------------- END OF FUNCTION --------------------- #
+    
+    # Assuming the dataframe is indexed by artist_id and columns represent audio features
+    artist1_features = artists_audio_feat.loc[artist1_id]
+    artist2_features = artists_audio_feat.loc[artist2_id]
 
+    # Create the plot
+    plt.figure()
+    x = range(len(artist1_features))
+    plt.bar(x, artist1_features, width=0.4, label=artist1_id, color='b', align='center')
+    plt.bar(x, artist2_features, width=0.4, label=artist2_id, color='r', align='edge')
+    plt.xlabel('Features')
+    plt.ylabel('Mean Value')
+    plt.title('Audio Features Comparison')
+    plt.xticks(x, artist1_features.index, rotation='vertical')
+    plt.legend()
+    plt.tight_layout()
+    plt.show()
+    # ----------------- END OF FUNCTION --------------------- #
 
 def plot_similarity_heatmap(artist_audio_features_df: pd.DataFrame, similarity: str, out_filename: str = None) -> None:
     """
@@ -71,34 +85,76 @@ def plot_similarity_heatmap(artist_audio_features_df: pd.DataFrame, similarity: 
     :param out_filename: name of the file to save the plot. If None, the plot is not saved.
     """
     # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
-    pass
+    
+    # Assuming a similarity matrix where each cell (i,j) contains the similarity between artist i and j
+    if similarity not in ['cosine', 'euclidean', 'manhattan']:
+        raise ValueError('Invalid similarity measure. Choose between "cosine", "euclidean", "manhattan".')
+
+    # Compute similarity matrix
+    if similarity == 'cosine':
+        similarity_matrix = cosine_similarity(artist_audio_features_df.values)
+    elif similarity == 'euclidean':
+        similarity_matrix = euclidean_distances(artist_audio_features_df.values)
+    else:
+        similarity_matrix = manhattan_distances(artist_audio_features_df.values)
+
+    # Create the plot
+    plt.figure(figsize=(10, 10))
+    sns.heatmap(similarity_matrix, xticklabels=artist_audio_features_df.index, yticklabels=artist_audio_features_df.index, cmap='viridis')
+    plt.title('Artists Similarity Heatmap')
+    
+    # Save the plot
+    if out_filename is not None:
+        plt.savefig(out_filename)
+    plt.show()
     # ----------------- END OF FUNCTION --------------------- #
 
+'''Auxiliary function for main'''
+def calculate_similarity_matrix(df):
+    return cosine_similarity(df.values)
 
 if __name__ == "__main__":
     # ------- IMPLEMENT HERE THE MAIN FOR THIS SESSION ------- #
+    
+    degree_dict_gB = dict(gB.degree())
+    degree_dict_gD = dict(gD.degree())
+    degree_dict_gwB = dict(gwB.degree())
     
     '''
     (a) Generate the plots of the degree distribution of the graphs g'B, g'D, and gwB.
         Configure the normalized and loglog parameters to generate the best possible
         visualization according to your criteria.
     '''
-    #CODE HERE
+    plot_degree_distribution(degree_dict_gB, normalized=True, loglog=True)
+    plot_degree_distribution(degree_dict_gD, normalized=True, loglog=True)
+    plot_degree_distribution(degree_dict_gwB, normalized=True, loglog=True)
+
+    
     '''
     (b) Select the artist that is most similar to Drake from gB and generate a comparison
         using the plot audio features function.
     '''
-    #CODE HERE
+    similarity_matrix = calculate_similarity_matrix(artists_audio_feat)
+    
+    
     '''
     (c) Select the artist that is less similar to Drake from gB and generate a comparison
         using the plot audio features function.
     '''
-    #CODE HERE
+    drake_index = artists_audio_feat.index.get_loc(drake_id)
+    least_similar_artist_index = np.argmin(similarity_matrix[drake_index])
+    least_similar_artist_id = artists_audio_feat.index[most_similar_artist_index]
+
+    # Generate a comparison using the plot audio features function
+    plot_audio_features(artists_audio_feat, drake_id, least_similar_artist_id)
+    
+    
     '''
     (d) Generate a heatmap showing the similarity between all artists in your dataset
         using the plot similarity heatmap function.
     '''
-    #CODE HERE
+    plot_similarity_heatmap(artists_audio_feat, 'cosine')
+   
 
     #**************GEPHI**************#
     
