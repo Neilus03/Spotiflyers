@@ -136,8 +136,6 @@ if __name__ == "__main__":
     (b) Select the artist that is most similar to Drake from gB and generate a comparison
         using the plot audio features function.
     '''
-
-    # (b) Select the artist that is most similar to Drake from gB
     drake_index = artists_audio_feat.index.get_loc(drake_id)
     most_similar_artist_index = np.argmax(similarity_matrix[drake_index])
     most_similar_artist_id = artists_audio_feat.index[most_similar_artist_index]
@@ -163,26 +161,6 @@ if __name__ == "__main__":
         using the plot similarity heatmap function.
     '''
     plot_similarity_heatmap(artists_audio_feat, 'cosine')
-   
-
-    #**************GEPHI**************#
     
-    '''
-    1.  Generate a visualization of the graph using Gephi that assigns a
-        color to the nodes based on the community they belong to and sizes the nodes
-        proportionally to their betweenness centrality. Use a layout algorithm that allows
-        for easy identification of the communities. Show the names of the most important
-        artists (highest betweenness centrality) in each community.
-    '''
-    #CODE HERE
-    '''
-    2.  Generate a visualization of the graph using Gephi while maintaining the
-        same node positioning as the previous exercise’s graph, but now assigning node size
-        based on their number of followers and node color based on the distance of each
-        node from the initial node of the crawler (the node representing the artist Drake).
-        Highlight the two artists selected for the plot audio features comparison (the less
-        and most similar artists to Drake).
-    '''
-    #CODE HERE
 
     # ------------------- END OF MAIN ------------------------ #
