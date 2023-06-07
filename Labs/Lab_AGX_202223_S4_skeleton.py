@@ -2,7 +2,7 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 import random
-sklearn.metrics.pairwise import *
+from sklearn.metrics.pairwise import *
 
 from Lab_AGX_202223_S1_skeleton import *
 from Lab_AGX_202223_S2_skeleton import *
