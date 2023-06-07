@@ -2,6 +2,8 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 import random
+sklearn.metrics.pairwise import *
+
 from Lab_AGX_202223_S1_skeleton import *
 from Lab_AGX_202223_S2_skeleton import *
 from Lab_AGX_202223_S3_skeleton import *
@@ -134,7 +136,14 @@ if __name__ == "__main__":
     (b) Select the artist that is most similar to Drake from gB and generate a comparison
         using the plot audio features function.
     '''
-    similarity_matrix = calculate_similarity_matrix(artists_audio_feat)
+
+    # (b) Select the artist that is most similar to Drake from gB
+    drake_index = artists_audio_feat.index.get_loc(drake_id)
+    most_similar_artist_index = np.argmax(similarity_matrix[drake_index])
+    most_similar_artist_id = artists_audio_feat.index[most_similar_artist_index]
+
+    # Generate a comparison using the plot audio features function
+    plot_audio_features(artists_audio_feat, drake_id, most_similar_artist_id)
     
     
     '''
