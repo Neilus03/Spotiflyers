@@ -45,13 +45,17 @@ Number of weakly connected components is 1
 Depth First search:
 Number of strongly connected components is 807
 Number of strongly connected components with more than one node is 4
+
 ```
 
 4. Also justify the relationship between the previous results and the number of connected components in the undirected graphs (g′B and g′D).
    There are 2 connected components from g'B and 6 from g'D respectively.
    
 ```
-   There are many more strongly connected components since each node that doesn't connect to anything gets registered as a strongly connected component, while they get erased in the undirected graps. On the other hand if we take out the strongly connected components with only one node, we get a more reasonable number.
+   There are many more strongly connected components since each node that doesn't connect to 
+   anything gets registered as a strongly connected component, while they get erased in the 
+   undirected graps. On the other hand if we take out the strongly connected components with 
+   only one node, we get a more reasonable number.
 ```
 
 5. Compute the size of the largest connected component from g′B and g′D. Which one is bigger? Justify the result.
@@ -60,7 +64,9 @@ Number of strongly connected components with more than one node is 4
 The largest connected component of the DFS network has 186 nodes.
 The largest connected component of the BFS network has 94 nodes.
 
-The largest connected components for g'b and g'd are 186 and 94 respectively, making g'b bigger, which makes sense since it is much more likely for breadth first search to end up looping back to a predecessor than it is for depth first search.
+The largest connected components for g'b and g'd are 186 and 94 respectively, making g'b bigger,
+which makes sense since it is much more likely for breadth first search to end up looping back 
+to a predecessor than it is for depth first search.
 ```
 
 
