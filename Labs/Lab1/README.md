@@ -4,11 +4,13 @@ Report on Session 1:
 Data acquisition and storage
 
 
-Introduction
+Introduction:
+
 In this session, we got access to the Spotify API to retrieve information from the Spotify data. This first session consists of the acquisition of data, showing where we can obtain it, how to do it, and showing the obstacles we may encounter during the process using Python scripts (or colab Notebooks). 
 
 
 Questions to answer in the report:
+
 1. Provide the order and size of the graphs gB and gD.
 
 	Graph gB has order 779 and size 4000
