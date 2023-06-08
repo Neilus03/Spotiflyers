@@ -15,7 +15,9 @@ The idea was to implement a recommender system that receives a graph annd a song
 | Love Don't Change |
 | Suicidal (feat. Juice WRLD) - Remix |
 | Right My Wrongs |
-| No Idea, Don Toliver | ![ab67616d0000b27345190a074bef3e8ce868b60c](https://github.com/Neilus03/Spotiflyers/assets/122691083/7a8c2ddb-8a0f-4175-8c5c-c4b544de413d)
+| No Idea, Don Toliver | 
+
+![No Idea](https://github.com/Neilus03/Spotiflyers/assets/122691083/7a8c2ddb-8a0f-4175-8c5c-c4b544de413d)
 
 | Mixed Personalities (feat. Kanye West) |
 | Come Through (feat. Chris Brown) |
