@@ -18,12 +18,11 @@ The idea was to implement a recommender system that receives a graph annd a song
 ![download](https://github.com/Neilus03/Spotiflyers/assets/87651732/91561cd0-aff7-4503-8823-9725e1562679)
 | [Love Don't Change](https://open.spotify.com/track/6PmjWl0phNxc0R5OwkDdiZ?si=8feb2d0a357b43b5) |
 ![maxresdefault1](https://github.com/Neilus03/Spotiflyers/assets/87651732/bae7bbd5-8da6-4bf9-88d5-2010bd0af0f0)
-| Suicidal (feat. Juice WRLD) - Remix |
+| [Suicidal (feat. Juice WRLD) - Remix](https://open.spotify.com/track/4S2uhQE8L9V6p7rj7SiauJ?si=0d81034d0ec14050) |
 ![download (1)](https://github.com/Neilus03/Spotiflyers/assets/87651732/a5dec48a-02f5-4e08-ab25-3c7c990875f5)
-
-| Right My Wrongs |
-| Mixed Personalities (feat. Kanye West) |
-| Come Through (feat. Chris Brown) |
-| B.S. (feat. H.E.R.) |
-| Annihilate (Spider-Man: Across the Spider-Vers... |
+| [Right My Wrongs](https://open.spotify.com/track/5rgrBsAFYMun6yhtnLKRPz?si=bdfe4ff735c84580) |
+|[ Mixed Personalities (feat. Kanye West)](https://open.spotify.com/track/6vWEAOUSxohKxhp0K1BsxL?si=c9ececee29064e9a) |
+| [Come Through (feat. Chris Brown)](https://open.spotify.com/track/3krZxyBsWEHfEfJegYaWTd?si=e746387b646f4391) |
+| [B.S. (feat. H.E.R.)](https://open.spotify.com/track/63wx9vdskaXbYxyDx4oJCZ?si=159cf9fa5dcb4bc0) |
+| [Annihilate (Spider-Man: Across the Spider-Verse)](https://open.spotify.com/track/39MK3d3fonIP8Mz9oHCTBB?si=338beab264d54ae1) |
 
