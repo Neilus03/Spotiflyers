@@ -24,15 +24,13 @@ The objective of this study is to analyze the user's preferences and recommend a
 
 ### 3. Describe the data preprocessing tasks.
 
-For data preprocessing, we performed normalization on the dataframe by dropping columns containing strings or dates. Next, we utilized the sklearn min-max scaler to normalize the remaining attributes. This process ensures that all values have the same weight and aids in accurate analysis.
+For data preprocessing, we used the same prepocessing we have done in previous sessions. We used the preprocessed dataframe and the preprocessed graphs.
 
 ### 4. Describe the data analysis tasks.
 
 (a) The network analysis algorithms utilized in this project include:
 
 - Content-based filtering: This algorithm analyzes the attributes of songs to determine their similarity and generate recommendations based on those similarities.
-
-
 
 ## Example of Results
 
