@@ -1,14 +1,15 @@
 # SPOTIFLYERS
 A deep analysis and modelling using Soptify API
 
+Once you enter Labs file you'll find the following:
 **
 ## Table of Contents
 
-- [Files](#Files)
-- [Requirements](#Requirements)
-- [Installation and Usage](#Execution)
-- [Using different datasets](#Using-Different-Datasets)
-- [Configuration](#Trying-Different-Configurations)
-- [APP](#APP)
-- [QUANTITATIVE and QUALITATIVE ANALYSIS](#QUANTITATIVE-and-QUALITATIVE-ANALYSIS)
+- [Lab1](https://github.com/Neilus03/Spotiflyers/tree/main/Labs/Lab1)
+- [Lab2](https://github.com/Neilus03/Spotiflyers/tree/main/Labs/Lab2)
+- [Lab3](https://github.com/Neilus03/Spotiflyers/tree/main/Labs/Lab3)
+- [Lab4](https://github.com/Neilus03/Spotiflyers/tree/main/Labs/Lab4)
+- [Lab5](https://github.com/Neilus03/Spotiflyers/tree/main/Labs/Lab5)
+- [Extra files](#Requirements)
+
 **
