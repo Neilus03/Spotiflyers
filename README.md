@@ -13,3 +13,5 @@ Once you enter Labs file you'll find the following:
 - [Extra files](#Requirements)
 
 **
+
+Is all guided inside those files so just dive in and discover every deail of this amazing project!
