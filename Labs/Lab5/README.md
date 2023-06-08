@@ -4,7 +4,7 @@
 
 ## Idea: Recommender System:
 
-The idea was to implement a recommender system that receives a graph annd a song ID provides a list of similar songs.
+The idea was to implement a content based recommender system that receives a graph annd a song name and provides a list of similar songs that you should like if you liked the given song. 
 
 ## Example of Results
 
