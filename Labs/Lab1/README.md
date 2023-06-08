@@ -73,6 +73,10 @@ The minimum in-degree is because the root has 0 indegree in both graphs, the min
 
 3. Indicate the number of songs in the dataset D and the number of different artists and albums that appear in it.
 
+Number of songs: 1996
+Number of artists: 200
+Number of albums: 919
+
 (a) Explain why the number of artists is between 200 and 400, considering the input graphs.
 
 
