@@ -78,12 +78,15 @@ Number of artists: 200
 Number of albums: 919
 
 (a) Explain why the number of artists is between 200 and 400, considering the input graphs.
+
 It makes sense that the number of artists would be 200 since that's the number of artists the crawler explored for the graph.
 
 
 (b) Justify why the number of songs you obtained is correct, considering the input graphs.
+
 By default the limit is 20 but considering many of them might not have 20 songs uploaded, it is understandable that the number falls sharply.
 
 
 (c) Justify why the number of retrieved albums is correct.
+
 It stands to reason that several of the top tracks of the artists shared album, aproximately 2 songs shared one album, making the amount of albums half of the amount of songs approximately.
