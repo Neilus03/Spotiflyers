@@ -36,10 +36,81 @@ During this third session, we will perform some analysis of the data we have pre
 ```
 
 4. Choose one of the cliques with the maximum size and analyze the artists that are part of it. Try to find some characteristic that defines these artists and explain it.
+```
 
+The maximum clique for gB with 7 nodes is: Yung Joc, Rocko, Young Dro, Shawty Lo, Boyz N Da Hood, U.S.D.A. and Rich Boy
+
+The maximum clique for gD with 10 nodes is: Mondo Rock, The Black Sorrows, Choirboys, Skyhooks, Australian Crawl, GANGgajang, Models, Stevie Wright, Richard Clapton and Baby Animals.
+
+The first clique consists in hip hop and rap artists from Southerm United States. They've been known to collaborate with one another, suggesting a well-connected network within their specific genre and regional scene.
+
+The second clique consists in mostly of rock and pop bands from Australia. Their music often features a distinct Australian identity and the experiences of the Australian urban and suburban lifestyle. Their connection could be due to their shared nationality, genre, and era of peak activity.
+
+```
 
 5. Detect communities in the graph gD. Explain which algorithm and parameters you used, and what is the modularity of the obtained partitioning. Do you consider the partitioning to be good?
 
+```
+The communities found in graph D where calculated with louvain method and they are:
+
+community: 1
+Drake
+Lil Wayne
+Nicki Minaj
+DJ Khaled
+
+community: 2
+J. Cole
+Kendrick Lamar
+Wale
+Big Sean
+
+community: 3
+The Weeknd
+PartyNextDoor
+Majid Jordan
+DVSN
+
+community: 4
+Rihanna
+Beyonce
+Chris Brown
+Alicia Keys
+
+community: 5
+Travis Scott
+Future
+Young Thug
+Migos
+
+community: 6
+Jay Z
+Kanye West
+Nas
+Pusha T
+
+community: 7
+Tyga
+Yg
+2 Chainz
+French Montana
+
+community: 8
+Justin Bieber
+Shawn Mendes
+Charlie Puth
+Post Malone
+
+community: 9
+Meek Mill
+Rick Ross
+T.I.
+Ludacris
+
+We got a modularity of 0.742.
+
+We consider that this partitions make sense since they form groups of similar artist.
+```
 
 6. Suppose that Spotify recommends artists based on the graphs obtained by the crawler (gB or gD). While a user is listening to a song by an artist, the player will randomly select a recommended artist (from the successors of the currently listened artist in the graph) and add a song by that artist to the playback queue.
 
