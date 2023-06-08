@@ -148,6 +148,26 @@ def calculate_advertising_cost(graph):
     total_cost = num_artists * cost_per_artist
 
     return total_cost
+
+def select_artists(graph, budget, cost_per_artist):
+    """
+    This function selects the artists that ensure the best spread of your advertisement,
+    given a budget and cost per artist.
+    """
+    # Number of artists we can afford
+    num_affordable_artists = budget // cost_per_artist
+
+    # Get the degree of each node in the graph
+    degrees = dict(graph.degree())
+
+    # Sort the artists by their degree in descending order
+    sorted_artists = sorted(degrees.items(), key=lambda item: item[1], reverse=True)
+
+    # Select the top artists that we can afford
+    selected_artists = [artist for artist, degree in sorted_artists[:num_affordable_artists]]
+
+    return selected_artists
+
 #----------end of auxiliaries----------#
     
 if __name__ == "__main__":
@@ -259,7 +279,16 @@ if __name__ == "__main__":
     the reason for the selection for the graphs gB and gD.
     '''
     
-    #CODE HERE
+    budget = 400
+    cost_per_artist = 100
+
+    selected_artists_gB = select_artists(gB, budget, cost_per_artist)
+    selected_artists_gD = select_artists(gD, budget, cost_per_artist)
+
+
+    print("Selected artists for graph gB:", selected_artists_gB)
+    print("Selected artists for graph gD:", selected_artists_gD)
+
     
     '''
     7. (1 point) Consider a recommendation model similar to the previous one, in which
