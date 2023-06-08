@@ -1,5 +1,5 @@
-Report on Session 2: 
-Data preprocessing
+# Report on Session 2: 
+## Data preprocessing
 
 Introduction
 In this session, we take the data loaded from session one and do the processing of the data using some functions to retrieve and compare information from graphs for easier management of the data. 
