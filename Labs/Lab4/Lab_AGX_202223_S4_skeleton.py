@@ -121,6 +121,7 @@ if __name__ == "__main__":
     degree_dict_gD = dict(gD.degree())
     degree_dict_gwB = dict(gwB.degree())
     degree_dict_gwD = dict(gwD.degree())
+    drake_id='3TVXtAsR1Inumwj472S9r4'
     
     '''
     (a) Generate the plots of the degree distribution of the graphs g'B, g'D, and gwB.
@@ -144,7 +145,7 @@ if __name__ == "__main__":
     most_similar_artist_id = artists_audio_feat.index[most_similar_artist_index]
 
     # Generate a comparison using the plot audio features function
-    plot_audio_features(artists_audio_feat, drake_id='3TVXtAsR1Inumwj472S9r4', most_similar_artist_id)
+    plot_audio_features(artists_audio_feat, drake_id=drake_id, most_similar_artist_id)
     
     
     '''
@@ -156,14 +157,16 @@ if __name__ == "__main__":
     least_similar_artist_id = artists_audio_feat.index[least_similar_artist_index]
 
     # Generate a comparison using the plot audio features function
-    plot_audio_features(artists_audio_feat, drake_id='3TVXtAsR1Inumwj472S9r4', least_similar_artist_id)
+    plot_audio_features(artists_audio_feat, drake_id=drake_id, least_similar_artist_id)
     
     
     '''
     (d) Generate a heatmap showing the similarity between all artists in your dataset
         using the plot similarity heatmap function.
     '''
-    plot_similarity_heatmap(artists_audio_feat, 'cosine')
     
+    artists_audio_feat = pd.read_csv('/content/gB_mean_audio_feat.csv', index_col="artist_id")
+    artists_audio_feat = artists_audio_feat.drop([ 'artist_name'], axis=1)
+    plot_similarity_heatmap(artists_audio_feat, "cosine", 'similarity_heatmap.png')
 
     # ------------------- END OF MAIN ------------------------ #
