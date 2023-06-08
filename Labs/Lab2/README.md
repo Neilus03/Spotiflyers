@@ -14,7 +14,7 @@ gB' size = 488 	gB' order = 188
 
 gD' size = 582 	gD' order = 189
 
-gwB' size = 506 gwB' order = 342
+gwB size = 506    gwB order = 342
 
 gwD size = 566    gwD order = 312
 ```
