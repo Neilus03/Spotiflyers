@@ -80,6 +80,7 @@ def plot_audio_features(artists_audio_feat: pd.DataFrame, artist1_id: str, artis
     plt.show()
     # ----------------- END OF FUNCTION --------------------- #
 
+    
 def plot_similarity_heatmap(artist_audio_features_df: pd.DataFrame, similarity: str, out_filename: str = None) -> None:
     """
     Plot a heatmap of the similarity between artists.
@@ -112,10 +113,6 @@ def plot_similarity_heatmap(artist_audio_features_df: pd.DataFrame, similarity: 
         plt.savefig(out_filename)
     plt.show()
     # ----------------- END OF FUNCTION --------------------- #
-
-'''Auxiliary function for main'''
-def calculate_similarity_matrix(df):
-    return cosine_similarity(df.values)
 
 if __name__ == "__main__":
     # ------- IMPLEMENT HERE THE MAIN FOR THIS SESSION ------- #
