@@ -239,7 +239,27 @@ if __name__ == "__main__":
     
     print(f"gB' order = {gB_.order()} \tgB' size = {gB_.size()}\ngD' order = {gD_.order()}\tgD' size = {gD_.size()}")
     
+    '''
+    Two undirected graphs with weights (gwB and gwD) obtained from the similarity between the artists.
+    To obtain them, it will be necessary to calculate the vector of average audio features for each artist (compute mean audio features),
+    create a similarity graph with these features (create similarity graph), and prune the resulting graph
+    (prune low weight edges) to achieve the desired size. Specifically, the size of the graph should be as
+    similar as possible to the size of graphs g′B and g′D, respectively.
+    '''
     
+    gB_track_data = pd.read_csv('./gB_track_data.csv')
+    gD_track_data = pd.read_csv('./gD_track_data.csv')
+    
+    gB_mean_audio_features = compute_mean_audio_features(gB_track_data)
+    gD_mean_audio_features = compute_mean_audio_features(gD_track_data)
+    
+    gB_similarity_graph = create_similarity_graph(gB_mean_audio_features, out_filename='gB_similarity_graph.graphml')
+    gD_similarity_graph = create_similarity_graph(gD_mean_audio_features, out_filename='gD_similarity_graph.graphml')
+    
+    threshold = 0.0035
+    
+    gwB = prune_low_weight_edges(gB_similarity_graph, min_weight=threshold, out_filename= 'gwB.graphml')
+    gwB = prune_low_weight_edges(gB_similarity_graph, min_weight=threshold, out_filename= 'gwD.graphml')
     
     pass
     # ------------------- END OF MAIN ------------------------ #
