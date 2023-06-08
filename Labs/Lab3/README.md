@@ -24,6 +24,7 @@ During this third session, we will perform some analysis of the data we have pre
 ```
 
 3. Find cliques of size greater than or equal to min size clique in the graphs g’B and g′D. The value of the variable min size clique will depend on the graph. Choose the maximum value that generates at least 2 cliques. Indicate the value you chose for min size clique and the total number of cliques you found for each size. Calculate and indicate the total number of different nodes that are part of all these cliques and compare the results from the two graphs.
+
 ```
     Number of cliques in gB with size >= 2: 199
 
@@ -33,6 +34,7 @@ During this third session, we will perform some analysis of the data we have pre
 
     Number of nodes in these cliques in gD: 189
 ```
+
 4. Choose one of the cliques with the maximum size and analyze the artists that are part of it. Try to find some characteristic that defines these artists and explain it.
 
 
@@ -41,10 +43,23 @@ During this third session, we will perform some analysis of the data we have pre
 
 6. Suppose that Spotify recommends artists based on the graphs obtained by the crawler (gB or gD). While a user is listening to a song by an artist, the player will randomly select a recommended artist (from the successors of the currently listened artist in the graph) and add a song by that artist to the playback queue.
 
-(a) Suppose you want to launch an advertising campaign through Spotify. Spotify
-allows playing advertisements when listening to music by a specific artist. To do this, you have to pay 100 euros for each artist to which you want to add ads. What is the minimum cost you have to pay to ensure that a user who listens to music infinitely will hear your ad at some point? The user can start listening to music by any artist (belonging to the obtained graphs). Provide the costs for the graphs gB and gD, and justify your answer.
+(a) Suppose you want to launch an advertising campaign through Spotify. Spotify allows playing advertisements when listening to music by a specific artist. To do this, you have to pay 100 euros for each artist to which you want to add ads. What is the minimum cost you have to pay to ensure that a user who listens to music infinitely will hear your ad at some point? The user can start listening to music by any artist (belonging to the obtained graphs). Provide the costs for the graphs gB and gD, and justify your answer.
+
+```
+77600 euros for graph gB 
+69900 euros for graph gD
+
+The cost for gB is bigger since it has more nodes than graph gD.
+```
 
 (b) Suppose you only have 400 euros for advertising. Which selection of artists ensures a better spread of your ad? Indicate the selected artists and explain the reason for the selection for the graphs gB and gD.
+
+```
+The selected artists for gB are: Young Dro, Yo Gotti, Yung Joc and Lil Scrappy.
+The selected artists for gD are: Tim Bowman, Steve Cole, Urban Knights and Joyce Cooling.
+
+These artist where selected because they have low degree so they are cheaper. 
+```
 
 7. Consider a recommendation model similar to the previous one, in which the player shows the user a set of other artists (defined by the successors of the currently listened artist in the graph), and the user can choose which artist to listen to from that set. Assume that users are familiar with the recommendation graph, and in this case, the gB graph is always used.
 
