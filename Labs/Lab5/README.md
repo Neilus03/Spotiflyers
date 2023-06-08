@@ -22,7 +22,9 @@ The idea was to implement a recommender system that receives a graph annd a song
 ![download (1)](https://github.com/Neilus03/Spotiflyers/assets/87651732/a5dec48a-02f5-4e08-ab25-3c7c990875f5)
 | [Right My Wrongs](https://open.spotify.com/track/5rgrBsAFYMun6yhtnLKRPz?si=bdfe4ff735c84580) |
 |[ Mixed Personalities (feat. Kanye West)](https://open.spotify.com/track/6vWEAOUSxohKxhp0K1BsxL?si=c9ececee29064e9a) |
+![68570943ab5b404ae5dc3ddac7d4118c 1000x1000x1](https://github.com/Neilus03/Spotiflyers/assets/87651732/aff0c431-d881-4ee6-8016-2731b27c54e0)
 | [Come Through (feat. Chris Brown)](https://open.spotify.com/track/3krZxyBsWEHfEfJegYaWTd?si=e746387b646f4391) |
 | [B.S. (feat. H.E.R.)](https://open.spotify.com/track/63wx9vdskaXbYxyDx4oJCZ?si=159cf9fa5dcb4bc0) |
 | [Annihilate (Spider-Man: Across the Spider-Verse)](https://open.spotify.com/track/39MK3d3fonIP8Mz9oHCTBB?si=338beab264d54ae1) |
+
 
