@@ -8,9 +8,7 @@ The idea was to implement a recommender system that receives a graph annd a song
 
 ## Example of Results
 
-| Recommended songs if you liked |
-| [Calling (Spider-Man: Across the Spider-Verse)](https://open.spotify.com/track/5rurggqwwudn9clMdcchxT?si=6f92fc189caa4c12) |
-![maxresdefault](https://github.com/Neilus03/Spotiflyers/assets/87651732/2a037263-1cc1-4e2e-9035-eda7bb59fc89)
+| Recommended songs if you liked [Calling (Spider-Man: Across the Spider-Verse)](https://open.spotify.com/track/5rurggqwwudn9clMdcchxT?si=6f92fc189caa4c12) ![maxresdefault](https://github.com/Neilus03/Spotiflyers/assets/87651732/2a037263-1cc1-4e2e-9035-eda7bb59fc89)
 | -----------|
 | [No Idea, Don Toliver](https://open.spotify.com/track/7AzlLxHn24DxjgQX73F9fU?si=d92ad7280ed64ec4) |
 ![No Idea](https://github.com/Neilus03/Spotiflyers/assets/122691083/7a8c2ddb-8a0f-4175-8c5c-c4b544de413d)
