@@ -39,9 +39,11 @@ def recommend_tracks(track_df, track_name, top_n=10):
 
     # Get the track indices
     track_indices = [i[0] for i in sim_scores]
+    
+    # Remove the unrecommended rows
     track_df=track_df.loc[track_indices]
 
-    # Get the column indices
+    # Remove the unnecessary columns
     track_df=track_df[['name', 'artist_name']]
     
 
