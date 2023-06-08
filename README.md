@@ -20,8 +20,8 @@ To open and use this repository just execute thi command in the shell:
 git clone git@github.com:Neilus03/Spotiflyers.git spotiflyers
 ```
 
-## Colaborators:
-
+|  Colaborators: |
+| ---------------- |
 | Neil de la Fuente |
 | Jordi Longaron |
 | Daniel Vidal |
