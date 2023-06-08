@@ -27,6 +27,6 @@ The idea was to implement a recommender system that receives a graph annd a song
 | [Come Through (feat. Chris Brown)](https://open.spotify.com/track/3krZxyBsWEHfEfJegYaWTd?si=e746387b646f4391) |
 ![maxresdefault2](https://github.com/Neilus03/Spotiflyers/assets/87651732/0551ea00-88be-42c1-b8b9-de2f47ddda0d)
 | [B.S. (feat. H.E.R.)](https://open.spotify.com/track/63wx9vdskaXbYxyDx4oJCZ?si=159cf9fa5dcb4bc0) |
+![artworks-cs9wKrxx9Cfw-0-t500x500](https://github.com/Neilus03/Spotiflyers/assets/87651732/81234e15-8183-4672-81f7-43d58e18c698)
 | [Annihilate (Spider-Man: Across the Spider-Verse)](https://open.spotify.com/track/39MK3d3fonIP8Mz9oHCTBB?si=338beab264d54ae1) |
-
-
+![download (2)](https://github.com/Neilus03/Spotiflyers/assets/87651732/ed6238c9-1043-471c-a33c-c8232b757394)
