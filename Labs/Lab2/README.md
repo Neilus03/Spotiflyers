@@ -38,6 +38,9 @@ Number of strongly connected components with more than one node is 4
 
 
 4. Also justify the relationship between the previous results and the number of connected components in the undirected graphs (g′B and g′D).
+   There are 2 connected components from g'B and 6 from g'D respectively.
+   
+   There are many more strongly connected components since each node that doesn't connect to anything gets registered as a strongly connected component, while they get erased in the undirected graps. On the other hand if we take out the strongly connected components with only one node, we get a more reasonable number.
 
 5. Compute the size of the largest connected component from g′B and g′D. Which one is bigger? Justify the result.
 
