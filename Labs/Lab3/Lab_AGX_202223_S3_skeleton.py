@@ -1,6 +1,7 @@
 import networkx as nx
 from Lab_AGX_202223_S1_skeleton import *
 from Lab_AGX_202223_S2_skeleton import *
+
 # ------- IMPLEMENT HERE ANY AUXILIARY FUNCTIONS NEEDED ------- #
 
 
@@ -26,6 +27,7 @@ def num_common_nodes(*arg):
     common_nodes = set.intersection(*nodes_sets)
 
     return len(common_nodes)
+
     # ----------------- END OF FUNCTION --------------------- #
 
 def get_degree_distribution(g: nx.Graph) -> dict:
@@ -49,6 +51,7 @@ def get_degree_distribution(g: nx.Graph) -> dict:
 
     # Return the degree distribution
     return degree_dist
+
     # ----------------- END OF FUNCTION --------------------- # #
 
 def get_k_most_central(g: nx.Graph, metric: str, num_nodes: int) -> list:
@@ -79,6 +82,7 @@ def get_k_most_central(g: nx.Graph, metric: str, num_nodes: int) -> list:
 
     # Return the top num_nodes nodes
     return sorted_nodes[:num_nodes]
+
     # ----------------- END OF FUNCTION --------------------- #
 
 
@@ -107,7 +111,6 @@ def find_cliques(g: nx.Graph, min_size_clique: int) -> tuple:
     # ----------------- END OF FUNCTION --------------------- #
 
 
-
 def detect_communities(g: nx.Graph, method: str) -> tuple:
     """
     Detect communities in the graph g using the specified method.
@@ -133,7 +136,8 @@ def detect_communities(g: nx.Graph, method: str) -> tuple:
     # ----------------- END OF FUNCTION --------------------- #
 
     
-#--------AUXILIARIES-----------#
+#--------AUXILIARY FUNCTIONS-----------#
+
 def calculate_advertising_cost(graph):
     """
     This function calculates the cost of advertising 
@@ -167,9 +171,10 @@ def select_artists(graph, budget, cost_per_artist):
 
     return selected_artists
 
-#----------end of auxiliaries----------#
+#----------END OF AUXILIARY FUNCTIONS----------#
     
 if __name__ == "__main__":
+    
     # ------- IMPLEMENT HERE THE MAIN FOR THIS SESSION ------- #
     
     '''
@@ -180,16 +185,18 @@ if __name__ == "__main__":
        the create similarity graph function.
     '''
     
+    # Load the three graphs from graphml files from session 1
     gB = nx.read_graphml('/content/gB.graphml')
     hB = nx.read_graphml('/content/hB.graphml')
     fB = nx.read_graphml('/content/fB.graphml')
-
+    
+    # Calculate and print the number of nodes shared between gB and fB, and gB and hB
     common_nodes_gB_fB = num_common_nodes(gB, fB)
     print(f"Number of common nodes between gB and fB: {common_nodes_gB_fB}")
 
+    
     common_nodes_gB_hB = num_common_nodes(gB, hB)
     print(f"Number of common nodes between gB and hB: {common_nodes_gB_hB}")
-
 
     '''
     2) Calculate the 25 most central nodes in the graph g'B using both degree centrality
@@ -197,12 +204,16 @@ if __name__ == "__main__":
        Explain what information this gives us about the analyzed graph.
     '''
 
+    # Load the undirected versions of gB and gD from session 2
     gB_undirected = nx.read_graphml('/content/g\'B.graphml')
     gD_undirected = nx.read_graphml('/content/g\'D.graphml')
-
+    
+    # Find the 25 most central nodes in gB according to degree centrality and betweenness centrality
+    # Then, find how many nodes are central according to both measures
     most_central_nodes_degree = get_k_most_central(gB_undirected, 'degree', 25)
     most_central_nodes_betweenness = get_k_most_central(gB_undirected, 'betweenness', 25)
     common_central_nodes = set(most_central_nodes_degree).intersection(most_central_nodes_betweenness)
+    
     print(f"Number of common nodes between most central nodes (degree and betweenness): {len(common_central_nodes)}")
 
     '''
@@ -214,9 +225,11 @@ if __name__ == "__main__":
        of all these cliques and compare the results from the two graphs.
     '''
     
+    # Find the minimum size of cliques in gB and gD
     min_size_clique_in_gB = min(len(clique) for clique in list(nx.find_cliques(gB_undirected)))
     min_size_clique_in_gD = min(len(clique) for clique in list(nx.find_cliques(gD_undirected)))
     
+    # Find and print all cliques of at least this size in gB and gD
     cliques_gB, nodes_in_cliques_gB = find_cliques(gB_undirected, min_size_clique_in_gD)
     print(f"Number of cliques in gB with size >= {min_size_clique_in_gB}: {len(cliques_gB)}")
     print(f"Number of nodes in these cliques in gB: {len(nodes_in_cliques_gB)}")
@@ -250,6 +263,7 @@ if __name__ == "__main__":
     you consider the partitioning to be good?
     '''
     
+    # Detect communities in gD and print them along with the modularity of the partitioning
     communities_gD, modularity_gD = detect_communities(gD_undirected, 'louvain')  # or 'girvan-newman'
     print(f"Communities in gD: {communities_gD}, Modularity: {modularity_gD}")
     
@@ -268,16 +282,17 @@ if __name__ == "__main__":
     the costs for the graphs gB and gD, and justify your answer.
     '''
     
+    # Calculate and print the minimum cost to ensure an ad will eventually be heard in gB and gD
     print(calculate_advertising_cost(gB),'euros for gB')
     print(calculate_advertising_cost(gD), 'euros for gD')
-    
     
     '''
     (b) Suppose you only have 400 euros for advertising. Which selection of artists
     ensures a better spread of your ad? Indicate the selected artists and explain
     the reason for the selection for the graphs gB and gD.
     '''
-    
+
+    # Select the most effective artists to advertise with given a budget of 400 euros
     budget = 400
     cost_per_artist = 100
 
@@ -287,7 +302,6 @@ if __name__ == "__main__":
 
     print("Selected artists for graph gB:", selected_artists_gB)
     print("Selected artists for graph gD:", selected_artists_gD)
-
     
     '''
     7. (1 point) Consider a recommendation model similar to the previous one, in which
