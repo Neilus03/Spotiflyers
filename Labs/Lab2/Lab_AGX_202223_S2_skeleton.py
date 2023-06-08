@@ -140,6 +140,7 @@ def prune_low_weight_edges(g: nx.Graph, min_weight=None, min_percentile=None, ou
 
     #   We will store the lonely nodes in this list
     nodes_to_prune=[]
+    
     # Iterate over each node in the pruned graph
     for node in prunned_g:
         
@@ -233,9 +234,11 @@ if __name__ == "__main__":
     gB = nx.read_graphml('./gB_graph.graphml')
     gD = nx.read_graphml('./gD_graph.graphml')
    
+    # These are the graphs gB' and gD' that we get after applying retrieve_bidirectional_edges to the graphs gB and gD 
     g_B = retrieve_bidirectional_edges(gB, "g\'B.graphml")
     g_D = retrieve_bidirectional_edges(gD, "g\'D.graphml")
     
+    # Now we get the size and order of the graphs for the questions in the report
     print(f"gB' order = {g_B.order()} \tgB' size = {g_B.size()}\ngD' order = {g_D.order()}\tgD' size = {g_D.size()}")
     
     '''
