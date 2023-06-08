@@ -13,7 +13,7 @@ auth_manager = SpotifyClientCredentials(client_id='778ae223cf3a4a0cb5ecabff86c97
 sp = spotipy.Spotify ( auth_manager = auth_manager )
 
 
-def recommend_tracks(track_df, track_id, top_n=10):
+def recommend_tracks(track_df, track_name, top_n=10):
     """
     This function recommends tracks based on a given track id.
     """
@@ -26,7 +26,7 @@ def recommend_tracks(track_df, track_id, top_n=10):
     cosine_sim = cosine_similarity(track_df_scaled, track_df_scaled)
 
     # Get the index of the track that matches the track id
-    idx = track_df[track_df['track_id'] == track_id].index[0]
+    idx = track_df[track_df['name'] == track_name].index[0]
 
     # Get the pairwsie similarity scores of all tracks with that track
     sim_scores = list(enumerate(cosine_sim[idx]))
@@ -39,6 +39,11 @@ def recommend_tracks(track_df, track_id, top_n=10):
 
     # Get the track indices
     track_indices = [i[0] for i in sim_scores]
+    track_df=track_df.loc[track_indices]
+
+    # Get the column indices
+    track_df=track_df[['name', 'artist_name']]
+    
 
     # Return the top-n most similar tracks
-    return track_df['name'].iloc[track_indices]
+    return track_df
