@@ -48,7 +48,7 @@ def crawler(seed: str, max_nodes_to_crawl: int, strategy: str = "BFS", out_filen
       
       # Start loop that lasts until we meet the target of nodes to crawl or we run out of nodes
       while (expanded_counter < max_nodes_to_crawl) and nodes2expand:
-        #print(expanded_counter)
+        
         current_artist = nodes2expand.pop()# The id from which we are taking related artists right now
         
         if current_artist not in expanded_nodes: #If they are not expanded already we can add them.
