@@ -22,7 +22,7 @@ git clone git@github.com:Neilus03/Spotiflyers.git spotiflyers
 
 ## Colaborators:
 
-|Neil de la Fuente|
-|Jordi Longaron|
-|Daniel Vidal|
+| Neil de la Fuente |
+| Jordi Longaron |
+| Daniel Vidal |
 
