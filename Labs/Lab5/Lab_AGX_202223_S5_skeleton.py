@@ -81,10 +81,10 @@ if __name__ == "__main__":
     gBtd=pd.read_csv("/content/gB_track_data.csv")
     gDtd=pd.read_csv("/content/gD_track_data.csv")
     
- recommendations=recommend_tracks(gBtd, "Never Sleep (with Lil Baby feat. Travis Scott)")
+    recommendations=recommend_tracks(gBtd, "Never Sleep (with Lil Baby feat. Travis Scott)")
 
-recommendations.style
+    recommendations.style
 
-visualize_recommendations('5rurggqwwudn9clMdcchxT', recommendations, gBtd)
+    visualize_recommendations('5rurggqwwudn9clMdcchxT', recommendations, gBtd)
 
-# ------------------ End of Main -------------------------- # 
+    # ------------------ End of Main -------------------------- # 
