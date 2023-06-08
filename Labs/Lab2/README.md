@@ -57,10 +57,10 @@ Number of strongly connected components with more than one node is 4
 5. Compute the size of the largest connected component from g′B and g′D. Which one is bigger? Justify the result.
 
 ```
-The largest connected components for g'b and g'd are 186 and 94 respectively, making g'b bigger, which makes sense since it is much more likely for breadth first search to end up looping back to a predecessor than it is for depth first search.
-
 The largest connected component of the DFS network has 186 nodes.
 The largest connected component of the BFS network has 94 nodes.
+
+The largest connected components for g'b and g'd are 186 and 94 respectively, making g'b bigger, which makes sense since it is much more likely for breadth first search to end up looping back to a predecessor than it is for depth first search.
 ```
 
 
