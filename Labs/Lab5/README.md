@@ -12,6 +12,7 @@ The idea was to implement a content based recommender system that receives a gra
 We are looking at the user side of things and offering a plethora of similar songs so that despite changing songs, it would still retain the mood or vibe that they carried with the last song. 
 
 2. Describe the process of data acquisition and the obtained data. 
+  
   (a) Explain how you obtained the data (e.g., search criteria or crawler scheduling algorithm).
   We reused the search artist and track ids and the further added the method to get track data from session 1 in order to get the dataframes that we could use for each song. 
 
@@ -24,11 +25,11 @@ We are looking at the user side of things and offering a plethora of similar son
 
   (c) Describe the obtained data. For graphs, describe the type of graph used, what the nodes and edges represent, and their attributes. For tabular data, describe the               collected entities and their attributes.
 
-Each row is a track and the rows are 'track_id', 'duration', 'name', 'popularity', 'danceability', 'energy', 'loudness', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'album_id', 'album_name', 'album_release_date', 'artist_id' and 'artist_name'
+      Each row is a track and the rows are 'track_id', 'duration', 'name', 'popularity', 'danceability', 'energy', 'loudness', 'speechiness', 'acousticness',       `                 'instrumentalness',     'liveness', 'valence', 'tempo', 'album_id', 'album_name', 'album_release_date', 'artist_id' and 'artist_name'
  
-(d) Indicate the volume of collected data. For graphs, provide the size and order. For tabular data, provide the number of records. 2 
+  (d) Indicate the volume of collected data. For graphs, provide the size and order. For tabular data, provide the number of records. 2 
 
-(e) Detail the format used to store the data. 
+  (e) Detail the format used to store the data. 
 
 3. Describe the data preprocessing tasks. 
 We made a normalized version of the dataframe dropping the columns that were strings or dates and then using sklearn min max scaler to normalize it so all values would have the same weight.
