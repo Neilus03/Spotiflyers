@@ -236,7 +236,7 @@ if __name__ == "__main__":
     g_B = retrieve_bidirectional_edges(gB, "g\'B.graphml")
     g_D = retrieve_bidirectional_edges(gD, "g\'D.graphml")
     
-    print(f"gB' order = {gB_.order()} \tgB' size = {gB_.size()}\ngD' order = {gD_.order()}\tgD' size = {gD_.size()}")
+    print(f"gB' order = {g_B.order()} \tgB' size = {g_B.size()}\ngD' order = {g_D.order()}\tgD' size = {g_D.size()}")
     
     '''
     b) Two undirected graphs with weights (gwB and gwD) obtained from the similarity between the artists.
@@ -258,11 +258,11 @@ if __name__ == "__main__":
     gB_similarity_graph = create_similarity_graph(gB_mean_audio_features, out_filename='gB_similarity_graph.graphml')
     gD_similarity_graph = create_similarity_graph(gD_mean_audio_features, out_filename='gD_similarity_graph.graphml')
     
-    threshold = 0.0035 # we set this threshold to get a graph with similar size to the ones obtained in exercise a)
+    threshold = 0.00105 # we set this threshold to get a graph with similar size to the ones obtained in exercise a)
     
     # we compute the graphs gwB and gwD that are the similarity graphs but prunned with the threshols given.
     gwB = prune_low_weight_edges(gB_similarity_graph, min_weight=threshold, out_filename= 'gwB.graphml')
     gwB = prune_low_weight_edges(gB_similarity_graph, min_weight=threshold, out_filename= 'gwD.graphml')
     
-    pass
+
     # ------------------- END OF MAIN ------------------------ #
