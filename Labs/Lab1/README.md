@@ -71,11 +71,11 @@ It makes sense that the number of artists would be 280 since there are two graph
 (b) Justify why the number of songs you obtained is correct, considering the input graphs.
 
 ```
-By default the limit is 20 but considering many of them might not have 20 songs uploaded, it is understandable that the number falls sharply.
+Our data retrieval results in an anticipated volume of songs due to the exponential nature of popular song acquisition from two artist graphs. Given the randomness of this process and the high chance of song repetition among interconnected artists, predicting the exact song count is not feasible. Thus, the variability and unpredictability of the song count are inherent to our search method and the artist graphs' structure.
 ```
 
 (c) Justify why the number of retrieved albums is correct.
 
 ```
-It stands to reason that several of the top tracks of the artists shared album, aproximately 2 songs shared one album, making the amount of albums half of the amount of songs approximately.
+The number of unique albums in our dataset matches our expectations, largely due to reasons already explained. It's important to remember that unique album counts are generally lower than song counts because an album typically contains several songs, resulting in a larger number of distinct songs compared to albums.
 ```
