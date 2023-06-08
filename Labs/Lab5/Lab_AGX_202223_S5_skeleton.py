@@ -72,6 +72,9 @@ def visualize_recommendations(song_id, recommendations, df):
 
 
 if __name__ == "__main__":
+    
+# --------------------- Main -------------------------- # 
+
     track_id="5rurggqwwudn9clMdcchxT"
     nr=10
     tpa=3
@@ -83,3 +86,5 @@ if __name__ == "__main__":
 recommendations.style
 
 visualize_recommendations('5rurggqwwudn9clMdcchxT', recommendations, gBtd)
+
+# ------------------ End of Main -------------------------- # 
