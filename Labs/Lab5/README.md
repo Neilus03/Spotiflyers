@@ -12,17 +12,17 @@ The idea was to implement a content based recommender system that receives a gra
 We are looking at the user side of things and offering a plethora of similar songs so that despite changing songs, it would still retain the mood or vibe that they carried with the last song. 
 
 2. Describe the process of data acquisition and the obtained data. 
-(a) Explain how you obtained the data (e.g., search criteria or crawler scheduling algorithm).
-We reused the search artist and track ids and the further added the method to get track data from session 1 in order to get the dataframes that we could use for each song. 
+  (a) Explain how you obtained the data (e.g., search criteria or crawler scheduling algorithm).
+  We reused the search artist and track ids and the further added the method to get track data from session 1 in order to get the dataframes that we could use for each song. 
 
 
-(b) Which API endpoints did you use to acquire the data? 
+  (b) Which API endpoints did you use to acquire the data? 
 
-`
-The same ones we used in session 1
-`
+   `
+    The same ones we used in session 1
+   `
 
-(c) Describe the obtained data. For graphs, describe the type of graph used, what the nodes and edges represent, and their attributes. For tabular data, describe the collected entities and their attributes.
+  (c) Describe the obtained data. For graphs, describe the type of graph used, what the nodes and edges represent, and their attributes. For tabular data, describe the               collected entities and their attributes.
 
 Each row is a track and the rows are 'track_id', 'duration', 'name', 'popularity', 'danceability', 'energy', 'loudness', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'album_id', 'album_name', 'album_release_date', 'artist_id' and 'artist_name'
  
