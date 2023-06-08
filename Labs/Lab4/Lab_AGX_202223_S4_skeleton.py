@@ -12,7 +12,43 @@ from Lab_AGX_202223_S3_skeleton import *
 
 # ------- IMPLEMENT HERE ANY AUXILIARY FUNCTIONS NEEDED ------- #
 
+def create_similarity_graph(artist_audio_features_df: pd.DataFrame, similarity: str, out_filename: str = 'gw_.graphml') -> nx.Graph:
+    """
+    Create a similarity graph from a dataframe with mean audio features per artist.
 
+    :param artist_audio_features_df: dataframe with mean audio features per artist.
+    :param similarity: the name of the similarity metric to use (e.g. "cosine" or "euclidean").
+    :param out_filename: name of the file that will be saved.
+    :return: a networkx graph with the similarity between artists as edge weights.
+    """
+    # ------- IMPLEMENT HERE THE BODY OF THE FUNCTION ------- #
+    
+    # Compute the pairwise similarity matrix
+    similarity_matrix = pairwise_distances(artist_audio_features_df.drop(columns=['artist_id', 'artist_name']).values, metric=similarity)
+    
+    # Initialize the graph
+    G = nx.Graph()
+    
+    # Add nodes to the graph
+    for idx, artist in enumerate(artist_audio_features_df.index):
+        G.add_node(artist)
+    
+    # Add edges to the graph
+    for i in range(similarity_matrix.shape[0]):
+        for j in range(i+1, similarity_matrix.shape[1]):
+            artist_i = artist_audio_features_df.index[i]
+            artist_j = artist_audio_features_df.index[j]
+            weight   = similarity_matrix[i, j]
+            
+            G.add_edge(artist_i, artist_j, weight=weight)
+    
+    # Save the graph to a file if out_filename is provided
+    if out_filename:
+        nx.write_graphml(G, out_filename)
+    
+    return G
+    
+    # ----------------- END OF FUNCTION --------------------- #
 # --------------- END OF AUXILIARY FUNCTIONS ------------------ #
 
 def plot_degree_distribution(degree_dict: dict, normalized: bool = False, loglog: bool = False) -> None:
