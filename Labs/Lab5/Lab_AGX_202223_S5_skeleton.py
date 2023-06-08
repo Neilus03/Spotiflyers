@@ -46,3 +46,28 @@ def recommend_tracks(track_df, track_name, top_n=10):
 
     # Return the top-n most similar tracks
     return track_df
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+def visualize_recommendations(song_id, recommendations, df):
+    # Fetch the details of the original song and the recommended songs
+    song = df.loc[df['track_id'] == song_id]
+    recommended_songs=pd.DataFrame({'track_id', 'duration', 'name', 'popularity', 'danceability', 'energy',
+       'loudness', 'speechiness', 'acousticness', 'instrumentalness',
+       'liveness', 'valence', 'tempo', 'album_id', 'album_name',
+       'album_release_date', 'artist_id', 'artist_name'})
+    for n in recommendations.index.tolist():
+      recommended_songs.loc[len(recommended_songs)]=df.iloc[n]["track_id"]
+
+    # Combine the data for the original song and the recommended songs
+    combined = pd.concat([song, recommended_songs])
+
+    # Plotting the features of interest with pairplot
+    features_of_interest = ['danceability', 'energy', 'loudness', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo']
+    sns.pairplot(combined[features_of_interest])
+
+    plt.show()
+    return
+
+
