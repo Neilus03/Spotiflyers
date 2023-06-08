@@ -16,7 +16,11 @@ We are looking at the user side of things and offering a plethora of similar son
 We reused the search artist and track ids and the further added the method to get track data from session 1 in order to get the dataframes that we could use for each song. 
 
 
-(b) Which API endpoints did you use to acquire the data? The same ones we used in session 1.
+(b) Which API endpoints did you use to acquire the data? 
+
+`
+The same ones we used in session 1
+`
 
 (c) Describe the obtained data. For graphs, describe the type of graph used, what the nodes and edges represent, and their attributes. For tabular data, describe the collected entities and their attributes.
 
