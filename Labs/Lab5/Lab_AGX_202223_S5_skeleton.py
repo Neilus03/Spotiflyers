@@ -3,10 +3,7 @@ import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
-from Lab_AGX_202223_S1_skeleton import *
-from Lab_AGX_202223_S2_skeleton import *
-from Lab_AGX_202223_S3_skeleton import *
-from Lab_AGX_202223_S4_skeleton import *
+
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 auth_manager = SpotifyClientCredentials(client_id='778ae223cf3a4a0cb5ecabff86c97888',client_secret='dbf631d78bae4f2c85aaba5110fb2a06')
