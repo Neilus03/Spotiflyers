@@ -302,10 +302,10 @@ if __name__ == "__main__":
     example of the artists you would have to listen to in order to reach it.
     '''
     
-    # Get the shortest path from Young Dro to Travis Porter
+    # Get the shortest path from Young Dro to Travis Porter 
 
-    Young_Dro = '3ZooCJzNMTLpmJaIRUEorI' # ID
-    Travis_Porter = '6z1cicLMt9XArxN10q7m8a' #ID
+    Young_Dro = '3ZooCJzNMTLpmJaIRUEorI' # ID calculated using the search_artist function from session 1
+    Travis_Porter = '6z1cicLMt9XArxN10q7m8a' #ID calculated using the search_artist function from session 1
     path = nx.shortest_path(gB, Young_Dro, Travis_Porter)
 
     print("Shortest path from Young Dro to Travis Porter:", path)
