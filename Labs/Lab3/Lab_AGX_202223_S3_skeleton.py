@@ -190,22 +190,78 @@ if __name__ == "__main__":
     print(f"Number of nodes in these cliques in gD: {len(nodes_in_cliques_gD)}")
 
     '''
-    4) Find cliques of size greater than or equal to min size clique in the graphs g'B and g'D.
-       The value of the variable min size clique will depend on the graph. Choose the maximum 
-       value that generates at least 2 cliques. Indicate the value you chose for min size clique
-       and the total number of cliques you found for each size. Calculate and indicate the total
-       number of different nodes that are part of all these cliques and compare the results from
-       the two graphs.
-    '''
-    
-    #max_size_clique = max(cliques_gB, key=len)
-    #print(f"Max size clique: {max_size_clique}")
-
-    '''
-    5) Choose one of the cliques with the maximum size and analyze the artists that are part
+    4) Choose one of the cliques with the maximum size and analyze the artists that are part
        of it. Try to find some characteristic that defines these artists and explain it.
     '''
     
+    # Get the size of the largest clique
+    max_size = max(len(clique) for clique in cliques_gB)
+
+    # Get one of the cliques of this size
+    max_clique = next(clique for clique in cliques_gB if len(clique) == max_size)
+
+    print("Max size clique in gB:", max_clique)
+
+    # Repeat for gD
+    max_size = max(len(clique) for clique in cliques_gD)
+    max_clique = next(clique for clique in cliques_gD if len(clique) == max_size)
+
+    print("Max size clique in gD:", max_clique)
+
+    '''
+    5. (0.5 points) Detect communities in the graph gD. Explain which algorithm and
+    parameters you used, and what is the modularity of the obtained partitioning. Do
+    you consider the partitioning to be good?
+    '''
+    
+    communities_gD, modularity_gD = detect_communities(gD_undirected, 'louvain')  # or 'girvan-newman'
+    print(f"Communities in gD: {communities_gD}, Modularity: {modularity_gD}")
+    
+    '''
+    6. (1 point) Suppose that Spotify recommends artists based on the graphs obtained by
+    the crawler (gB or gD). While a user is listening to a song by an artist, the player
+    will randomly select a recommended artist (from the successors of the currently
+    listened artist in the graph) and add a song by that artist to the playback queue.
+    
+    (a) Suppose you want to launch an advertising campaign through Spotify. Spotify
+    allows playing advertisements when listening to music by a specific artist. To
+    do this, you have to pay 100 euros for each artist to which you want to add
+    ads. What is the minimum cost you have to pay to ensure that a user who
+    listens to music infinitely will hear your ad at some point? The user can start
+    listening to music by any artist (belonging to the obtained graphs). Provide
+    the costs for the graphs gB and gD, and justify your answer.
+    '''
+    
     #CODE HERE
+    
+    '''
+    (b) Suppose you only have 400 euros for advertising. Which selection of artists
+    ensures a better spread of your ad? Indicate the selected artists and explain
+    the reason for the selection for the graphs gB and gD.
+    '''
+    
+    #CODE HERE
+    
+    '''
+    7. (1 point) Consider a recommendation model similar to the previous one, in which
+    the player shows the user a set of other artists (defined by the successors of the
+    currently listened artist in the graph), and the user can choose which artist to listen
+    to from that set. Assume that users are familiar with the recommendation graph,
+    and in this case, the gB graph is always used.
+
+    (a) If you start by listening to the artist Young Dro and your favorite artist is
+    Travis Porter, how many hops will you need at minimum to reach it? Give an
+    example of the artists you would have to listen to in order to reach it.
+    '''
+    
+    # Get the shortest path from Young Dro to Travis Porter
+
+    Young_Dro = '3ZooCJzNMTLpmJaIRUEorI' # ID
+    Travis_Porter = '6z1cicLMt9XArxN10q7m8a' #ID
+    path = nx.shortest_path(gB, Young_Dro, Travis_Porter)
+
+    print("Shortest path from Young Dro to Travis Porter:", path)
+    print("Number of hops:", len(path) - 1)
+
 
     # ------------------- END OF MAIN ------------------------ #
