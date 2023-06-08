@@ -77,3 +77,9 @@ if __name__ == "__main__":
     tpa=3
     gBtd=pd.read_csv("/content/gB_track_data.csv")
     gDtd=pd.read_csv("/content/gD_track_data.csv")
+    
+ recommendations=recommend_tracks(gBtd, "Never Sleep (with Lil Baby feat. Travis Scott)")
+
+recommendations.style
+
+visualize_recommendations('5rurggqwwudn9clMdcchxT', recommendations, gBtd)
