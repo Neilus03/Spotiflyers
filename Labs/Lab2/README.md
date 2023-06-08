@@ -13,12 +13,12 @@ gB' size = 488 	gB' order = 188
 
 gD' size = 582 	gD' order = 189
 
-gwB' size = 506 gwB' order = 342  **revisar
+gwB' size = 506 gwB' order = 342
 
 
 2. Justify the strategy used to obtain gwB and gwD.
 
-
+   Method: Compute mean audio features → create similarity graph → prune low weight edges
 
 3. Justify whether the directed graphs obtained from the initial exploration of the crawler (gB and gD) can have more than one weakly connected component and one strongly connected component, and explain why. Indicate the relationship with the selection of a single seed.
 
