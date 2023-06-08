@@ -32,24 +32,6 @@ For data preprocessing, we performed normalization on the dataframe by dropping 
 
 - Content-based filtering: This algorithm analyzes the attributes of songs to determine their similarity and generate recommendations based on those similarities.
 
-### 5. Describe the visualization tasks.
-
-(a) The visualizations were generated using the following tools:
-
-- [Tool name]: [Description of the tool used]
-
-(b) The parameters or configurations used in the visualizations were:
-
-- [Parameter/Configuration]: [Description of the parameter/configuration used]
-
-(c) Some problems encountered during visualization tasks were [Problem description], and these were resolved by [Solution implemented].
-
-### 6. Answer the initial question using the results of the performed analyses and generated visualizations.
-
-Based on the performed analyses and generated visualizations, we can confidently answer the initial question by providing a list of similar songs that users are likely to enjoy if they liked the given song. The recommender system leverages the network analysis algorithms and data preprocessing tasks to deliver relevant and personalized song recommendations.
-
-Thank you for reading this readme file. We hope you find the information provided helpful and insightful for understanding the Personal Network Analysis Project.
-
 
 
 ## Example of Results
