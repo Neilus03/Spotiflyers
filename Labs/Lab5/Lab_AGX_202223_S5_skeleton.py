@@ -71,3 +71,9 @@ def visualize_recommendations(song_id, recommendations, df):
     return
 
 
+if __name__ == "__main__":
+    track_id="5rurggqwwudn9clMdcchxT"
+    nr=10
+    tpa=3
+    gBtd=pd.read_csv("/content/gB_track_data.csv")
+    gDtd=pd.read_csv("/content/gD_track_data.csv")
