@@ -1,5 +1,5 @@
 # SPOTIFLYERS
-A deep analysis and modelling using Soptify API
+Welcome to SPOTIFLYERSS, on this projecct we'll perform a deep analysis and modelling using Network and graoh science on Soptify API
 
 Once you enter Labs file you'll find the following:
 ## Table of Contents
