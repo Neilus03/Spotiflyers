@@ -6,6 +6,40 @@
 
 The idea was to implement a content based recommender system that receives a graph annd a song name and provides a list of similar songs that you should like if you liked the given song. 
 
+## Questions Report: 
+
+1. Define the objectives of your study. What question or objectives do you aim to address? 
+We are looking at the user side of things and offering a plethora of similar songs so that despite changing songs, it would still retain the mood or vibe that they carried with the last song. 
+
+2. Describe the process of data acquisition and the obtained data. 
+(a) Explain how you obtained the data (e.g., search criteria or crawler scheduling algorithm).
+We reused the search artist and track ids and the further added the method to get track data from session 1 in order to get the dataframes that we could use for each song. 
+
+
+(b) Which API endpoints did you use to acquire the data? The same ones we used in session 1.
+
+(c) Describe the obtained data. For graphs, describe the type of graph used, what the nodes and edges represent, and their attributes. For tabular data, describe the collected entities and their attributes.
+
+Each row is a track and the rows are 'track_id', 'duration', 'name', 'popularity', 'danceability', 'energy', 'loudness', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'album_id', 'album_name', 'album_release_date', 'artist_id' and 'artist_name'
+ 
+(d) Indicate the volume of collected data. For graphs, provide the size and order. For tabular data, provide the number of records. 2 
+
+(e) Detail the format used to store the data. 
+
+3. Describe the data preprocessing tasks. 
+We made a normalized version of the dataframe dropping the columns that were strings or dates and then using sklearn min max scaler to normalize it so all values would have the same weight.
+
+4. Describe the data analysis tasks. 
+(a) What network analysis algorithms did you use? 
+
+5. Describe the visualization tasks. 
+(a) What tools did you use to generate the visualizations? 
+(b) What parameters or configurations did you use? 
+(c) What problems did you encounter, and how did you solve them? 
+
+6. Answer the initial question using the results of the performed analyses and generated visualizations. 
+
+
 ## Example of Results
 
 | Recommended songs if you liked [Calling (Spider-Man: Across the Spider-Verse)](https://open.spotify.com/track/5rurggqwwudn9clMdcchxT?si=6f92fc189caa4c12) ![maxresdefault](https://github.com/Neilus03/Spotiflyers/assets/87651732/2a037263-1cc1-4e2e-9035-eda7bb59fc89)
