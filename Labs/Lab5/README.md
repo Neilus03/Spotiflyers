@@ -30,3 +30,6 @@ The idea was to implement a recommender system that receives a graph annd a song
 ![artworks-cs9wKrxx9Cfw-0-t500x500](https://github.com/Neilus03/Spotiflyers/assets/87651732/81234e15-8183-4672-81f7-43d58e18c698)
 | [Annihilate (Spider-Man: Across the Spider-Verse)](https://open.spotify.com/track/39MK3d3fonIP8Mz9oHCTBB?si=338beab264d54ae1) |
 ![download (2)](https://github.com/Neilus03/Spotiflyers/assets/87651732/ed6238c9-1043-471c-a33c-c8232b757394)
+
+
+We can clearly see that this songs are actually so related. Afroamerican styles mixed. 
