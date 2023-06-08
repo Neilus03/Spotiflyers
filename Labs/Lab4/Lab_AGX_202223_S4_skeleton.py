@@ -152,7 +152,11 @@ def plot_similarity_heatmap(artist_audio_features_df: pd.DataFrame, similarity: 
 
 if __name__ == "__main__":
     # ------- IMPLEMENT HERE THE MAIN FOR THIS SESSION ------- #
-    
+    gB = nx.read_graphml('/content/gB.graphml')
+    gD = nx.read_graphml('/content/gD.graphml')
+    gwB = nx.read_graphml('/content/gwB.graphml')
+    gwD = nx.read_graphml('/content/gwD.graphml')
+
     D = pd.read_csv('/content/D.csv')
     D.index = D['artist_id']
     D = D.drop(columns=['track_id', 'name', 'album_release_date', 'album_name', 'album_id'])
