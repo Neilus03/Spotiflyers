@@ -153,6 +153,10 @@ def plot_similarity_heatmap(artist_audio_features_df: pd.DataFrame, similarity: 
 if __name__ == "__main__":
     # ------- IMPLEMENT HERE THE MAIN FOR THIS SESSION ------- #
     
+    D = pd.read_csv('/content/D.csv')
+    D.index = D['artist_id']
+    D = D.drop(columns=['track_id', 'name', 'album_release_date', 'album_name', 'album_id'])
+    
     degree_dict_gB = dict(gB.degree())
     degree_dict_gD = dict(gD.degree())
     degree_dict_gwB = dict(gwB.degree())
@@ -176,24 +180,18 @@ if __name__ == "__main__":
     (b) Select the artist that is most similar to Drake from gB and generate a comparison
         using the plot audio features function.
     '''
-    drake_index = artists_audio_feat.index.get_loc(drake_id)
-    most_similar_artist_index = np.argmax(similarity_matrix[drake_index])
-    most_similar_artist_id = artists_audio_feat.index[most_similar_artist_index]
-
+   
     # Generate a comparison using the plot audio features function
-    plot_audio_features(artists_audio_feat, drake_id=drake_id, most_similar_artist_id)
+    plot_audio_features(D, drake_id=drake_id, most_similar_artist_id)
     
     
     '''
     (c) Select the artist that is less similar to Drake from gB and generate a comparison
         using the plot audio features function.
     '''
-    drake_index = artists_audio_feat.index.get_loc(drake_id)
-    least_similar_artist_index = np.argmin(similarity_matrix[drake_index])
-    least_similar_artist_id = artists_audio_feat.index[least_similar_artist_index]
 
     # Generate a comparison using the plot audio features function
-    plot_audio_features(artists_audio_feat, drake_id=drake_id, least_similar_artist_id)
+    plot_audio_features(D, drake_id=drake_id, least_similar_artist_id)
     
     
     '''
