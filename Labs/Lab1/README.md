@@ -39,57 +39,43 @@ The size of graphs should be 4000 because the crawler expands 200 nodes and each
 
 2. Indicate the minimum, maximum, and median of the in-degree and out-degree of the two graphs (gB and gD). Justify the obtained values.
 
-|------|-------|
-|------|-------|
-Graph gB
-Minimum
-Maximum
-Median
-in-degree
-0
-34
-3
-out-degree
-0
-20
-0
 
+| Graph gB | Minimum | Maximum | Median |
+| -------- | ------- | ------- | ------ |
+| In-degree | 0  | 34  | 3 |
+| Out-degree | 0  | 20  | 0 |
 
+| Graph gD | Minimum | Maximum | Median |
+| -------- | ------- | ------- | ------ |
+| In-degree | 0  | 69  | 2 |
+| Out-degree | 0  | 20  | 0 |
 
-Graph gD
-Minimum
-Maximum
-Median
-in-degree
-0
-69
-2
-out-degree
-0
-20
-0
-
-
-
-The minimum in-degree is because the root has 0 indegree in both graphs, the minimum out-degree is 0 because of the leaf nodes that were not expanded. Given that each non-leaf node has 20 out-degree neighbors, it's possible that the nodes visited by DFS tend to have a higher in-degree because they might be more well-connected or popular artists. DFS, by its nature of exploring deeper paths, could be reaching these nodes more readily. Meanwhile, BFS could be capturing a more localized snapshot of the network, including potentially less popular artists (with a lower in-degree) that are closely connected to the seed node.
-
+```
+The minimum in-degree is because the root has 0 indegree in both graphs, the minimum out-degree is 0 because of the leaf nodes that were not expanded. Given that each non-leaf node has 20 out-degree neighbors, it's possible that the nodes visited by DFS tend to have a higher in-degree because they might be more well-connected or popular artists. DFS, by its nature of exploring deeper paths, could be reaching these nodes more readily. Meanwhile, BFS could be capturing a more localized snapshot of the network, including potentially less popular artists (with a lower in-degree) that are closely connected to the seed node. The median in-degree is 3 and 2 for gB and gD respectively because most of the nodes in the may have degree of 1 or 2 and a few ones have more than 3 or 2; and the median out-degree is 0 for both because most of the nodes have out-degree = 0, these nodes are the nodes that are not expanded meanwhile the nodes that are expanded (the 200 nodes) have out-degree = 20 but they are fewer nodes than the nodes with ou-degree = 0.
+```
 
 3. Indicate the number of songs in the dataset D and the number of different artists and albums that appear in it.
 
+```
 Number of songs: 1996
-Number of artists: 200
+Number of artists: 280
 Number of albums: 919
+```
 
 (a) Explain why the number of artists is between 200 and 400, considering the input graphs.
 
-It makes sense that the number of artists would be 200 since that's the number of artists the crawler explored for the graph.
-
+```
+It makes sense that the number of artists would be 280 since there are two graphs embedded in this df and many nodes might be repeated, then 280 sounds ok.
+```
 
 (b) Justify why the number of songs you obtained is correct, considering the input graphs.
 
+```
 By default the limit is 20 but considering many of them might not have 20 songs uploaded, it is understandable that the number falls sharply.
-
+```
 
 (c) Justify why the number of retrieved albums is correct.
 
+```
 It stands to reason that several of the top tracks of the artists shared album, aproximately 2 songs shared one album, making the amount of albums half of the amount of songs approximately.
+```
