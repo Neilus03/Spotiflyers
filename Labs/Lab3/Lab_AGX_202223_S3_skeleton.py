@@ -133,6 +133,23 @@ def detect_communities(g: nx.Graph, method: str) -> tuple:
 
     # ----------------- END OF FUNCTION --------------------- #
 
+    
+#--------AUXILIARIES-----------#
+def calculate_advertising_cost(graph):
+    """
+    This function calculates the cost of advertising 
+    on Spotify given a graph of artists.
+    """
+    # Number of artists in the graph
+    num_artists = len(graph.nodes()) 
+    cost_per_artist = 100  # The cost of advertising per artist
+
+    # Total cost
+    total_cost = num_artists * cost_per_artist
+
+    return total_cost
+#----------end of auxiliaries----------#
+    
 if __name__ == "__main__":
     # ------- IMPLEMENT HERE THE MAIN FOR THIS SESSION ------- #
     
@@ -232,7 +249,9 @@ if __name__ == "__main__":
     the costs for the graphs gB and gD, and justify your answer.
     '''
     
-    #CODE HERE
+    print(calculate_advertising_cost(gB),'euros for gB')
+    print(calculate_advertising_cost(gD), 'euros for gD')
+    
     
     '''
     (b) Suppose you only have 400 euros for advertising. Which selection of artists
