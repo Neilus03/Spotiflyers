@@ -12,4 +12,4 @@ Once you enter Labs file you'll find the following:
 - [Extra files](https://github.com/Neilus03/Spotiflyers/tree/main/Labs/Extra%20files)
 
 
-Is all guided inside those files so just dive in and discover every deail of this amazing project!
+Is all guided inside those files so just dive in and discover every detail of this amazing project!
