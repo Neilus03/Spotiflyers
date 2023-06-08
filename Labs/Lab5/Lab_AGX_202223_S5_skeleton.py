@@ -78,8 +78,8 @@ if __name__ == "__main__":
     track_id="5rurggqwwudn9clMdcchxT"
     nr=10
     tpa=3
-    gBtd=pd.read_csv("/content/gB_track_data.csv")
-    gDtd=pd.read_csv("/content/gD_track_data.csv")
+    gBtd=pd.read_csv("https://raw.githubusercontent.com/Neilus03/Spotiflyers/blob/main/Labs/Lab5/gD_track_data.csv")
+    gDtd=pd.read_csv("https://raw.githubusercontent.com/Neilus03/Spotiflyers/blob/main/Labs/Lab5/gD_track_data.csv")
     
     recommendations=recommend_tracks(gBtd, "Never Sleep (with Lil Baby feat. Travis Scott)")
 
