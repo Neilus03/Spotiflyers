@@ -3,6 +3,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 import random
 from sklearn.metrics.pairwise import *
+import seaborn as sns 
+impor numpy as np
 
 from Lab_AGX_202223_S1_skeleton import *
 from Lab_AGX_202223_S2_skeleton import *
@@ -121,15 +123,19 @@ if __name__ == "__main__":
     degree_dict_gB = dict(gB.degree())
     degree_dict_gD = dict(gD.degree())
     degree_dict_gwB = dict(gwB.degree())
+    degree_dict_gwD = dict(gwD.degree())
     
     '''
     (a) Generate the plots of the degree distribution of the graphs g'B, g'D, and gwB.
         Configure the normalized and loglog parameters to generate the best possible
         visualization according to your criteria.
     '''
-    plot_degree_distribution(degree_dict_gB, normalized=True, loglog=True)
-    plot_degree_distribution(degree_dict_gD, normalized=True, loglog=True)
-    plot_degree_distribution(degree_dict_gwB, normalized=True, loglog=True)
+    print('Degree distribution of gB:\n')
+    plot_degree_distribution(degree_dict_gB, normalized=True, loglog=False)
+    print('Degree distribution of gD:\n')
+    plot_degree_distribution(degree_dict_gD, normalized=True, loglog=False)
+    print('Degree distribution of gwB:\n')
+    plot_degree_distribution(degree_dict_gwB, normalized=True, loglog=False)
 
     
     '''
