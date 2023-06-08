@@ -175,7 +175,7 @@ if __name__ == "__main__":
        of all these cliques and compare the results from the two graphs.
     '''
     
-    min_size_clique = 10 #x poner algo
+    min_size_clique = 7 # At eight no cliques are found.
 
     cliques_gB, nodes_in_cliques_gB = find_cliques(gB, min_size_clique)
     print(f"Number of cliques in gB with size >= {min_size_clique}: {len(cliques_gB)}")
