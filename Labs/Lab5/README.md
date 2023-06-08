@@ -21,6 +21,7 @@ The idea was to implement a recommender system that receives a graph annd a song
 | [Suicidal (feat. Juice WRLD) - Remix](https://open.spotify.com/track/4S2uhQE8L9V6p7rj7SiauJ?si=0d81034d0ec14050) |
 ![download (1)](https://github.com/Neilus03/Spotiflyers/assets/87651732/a5dec48a-02f5-4e08-ab25-3c7c990875f5)
 | [Right My Wrongs](https://open.spotify.com/track/5rgrBsAFYMun6yhtnLKRPz?si=bdfe4ff735c84580) |
+![rmo](https://github.com/Neilus03/Spotiflyers/assets/122691083/733179dc-e61d-4ee8-a30e-be25618135a1)
 |[ Mixed Personalities (feat. Kanye West)](https://open.spotify.com/track/6vWEAOUSxohKxhp0K1BsxL?si=c9ececee29064e9a) |
 ![68570943ab5b404ae5dc3ddac7d4118c 1000x1000x1](https://github.com/Neilus03/Spotiflyers/assets/87651732/aff0c431-d881-4ee6-8016-2731b27c54e0)
 | [Come Through (feat. Chris Brown)](https://open.spotify.com/track/3krZxyBsWEHfEfJegYaWTd?si=e746387b646f4391) |
