@@ -13,3 +13,9 @@ Once you enter Labs file you'll find the following:
 
 
 Is all guided inside those files so just dive in and discover every detail of this amazing project!
+
+To open and use this repository just execute thi command in the shell:
+
+```
+git clone git@github.com:Neilus03/Spotiflyers.git spotiflyers
+```
