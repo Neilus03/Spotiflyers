@@ -2,21 +2,8 @@ import networkx as nx
 import pandas as pd
 
 # ------- IMPLEMENT HERE ANY AUXILIARY FUNCTIONS NEEDED ------- #
-import spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
-auth_manager = SpotifyClientCredentials(client_id='04861c6a3a184ab29403dcdf74848158',client_secret='6f8b0da3c7e2496c9a421469d96a379d')
-sp = spotipy.Spotify ( auth_manager = auth_manager )
 
-'''
-playlists = sp.user_playlists ('spotify')
-while playlists :
-    for i , playlist in enumerate ( playlists ['items']) :
-        print ("%4d %s %s" % ( i + 1 + playlists ['offset'] , playlist ['uri'] ,playlist ['name']) )
-    if playlists ['next']:
-        playlists = sp . next ( playlists )
-    else :
-        playlists = None
-'''
+
 # --------------- END OF AUXILIARY FUNCTIONS ------------------ #
 
 
@@ -172,6 +159,13 @@ def get_track_data(graphs: list, out_filename: str) -> pd.DataFrame:
 
 if __name__ == "__main__":
     # ------- IMPLEMENT HERE THE MAIN FOR THIS SESSION ------- #
+    
+    import spotipy
+    from spotipy.oauth2 import SpotifyClientCredentials
+    
+    auth_manager = SpotifyClientCredentials(client_id='04861c6a3a184ab29403dcdf74848158',
+                                            client_secret='6f8b0da3c7e2496c9a421469d96a379d')
+    sp = spotipy.Spotify ( auth_manager = auth_manager )
     
     ## Exercises to test the functions:
 
